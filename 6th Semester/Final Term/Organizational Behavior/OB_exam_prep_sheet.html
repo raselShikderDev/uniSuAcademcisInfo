@@ -1,0 +1,534 @@
+
+<style>
+*{box-sizing:border-box;margin:0;padding:0}
+body{font-family:var(--font-sans);color:var(--color-text-primary);background:transparent}
+.sheet{padding:1rem 0.5rem;max-width:900px;margin:0 auto}
+.header{background:var(--color-background-secondary);border:0.5px solid var(--color-border-tertiary);border-radius:var(--border-radius-lg);padding:1rem 1.25rem;margin-bottom:1.5rem}
+.header h1{font-size:18px;font-weight:500;margin-bottom:4px}
+.header p{font-size:13px;color:var(--color-text-secondary)}
+.stats{display:grid;grid-template-columns:repeat(3,1fr);gap:8px;margin-top:12px}
+.stat{background:var(--color-background-primary);border:0.5px solid var(--color-border-tertiary);border-radius:var(--border-radius-md);padding:8px 12px;text-align:center}
+.stat .num{font-size:22px;font-weight:500}
+.stat .lbl{font-size:11px;color:var(--color-text-secondary);margin-top:2px}
+.toc{background:var(--color-background-secondary);border:0.5px solid var(--color-border-tertiary);border-radius:var(--border-radius-lg);padding:1rem 1.25rem;margin-bottom:1.5rem}
+.toc h2{font-size:14px;font-weight:500;margin-bottom:10px;color:var(--color-text-secondary)}
+.toc-grid{display:grid;grid-template-columns:1fr 1fr;gap:4px}
+.toc-item{font-size:12px;padding:4px 8px;border-radius:var(--border-radius-md);cursor:pointer;border:0.5px solid transparent;transition:background 0.15s;color:var(--color-text-secondary)}
+.toc-item:hover{background:var(--color-background-primary);border-color:var(--color-border-tertiary);color:var(--color-text-primary)}
+.toc-badge{display:inline-block;font-size:10px;background:var(--color-background-info);color:var(--color-text-info);border-radius:4px;padding:1px 5px;margin-right:4px;font-weight:500}
+.core{background:var(--color-background-primary);border:0.5px solid var(--color-border-tertiary);border-radius:var(--border-radius-lg);margin-bottom:1.25rem;overflow:hidden}
+.core-header{padding:0.85rem 1.25rem;cursor:pointer;display:flex;align-items:center;justify-content:space-between;border-bottom:0.5px solid transparent;transition:background 0.15s;user-select:none}
+.core-header:hover{background:var(--color-background-secondary)}
+.core-header.open{border-bottom-color:var(--color-border-tertiary)}
+.core-title{font-size:15px;font-weight:500;display:flex;align-items:center;gap:8px;flex:1;min-width:0}
+.core-num{display:inline-flex;align-items:center;justify-content:center;width:24px;height:24px;border-radius:50%;font-size:11px;font-weight:500;flex-shrink:0}
+.core-num.purple{background:#EEEDFE;color:#3C3489}
+.core-num.teal{background:#E1F5EE;color:#0F6E56}
+.core-num.coral{background:#FAECE7;color:#993C1D}
+.core-num.blue{background:#E6F1FB;color:#185FA5}
+.core-num.amber{background:#FAEEDA;color:#854F0B}
+.core-num.pink{background:#FBEAF0;color:#993556}
+.core-num.green{background:#EAF3DE;color:#3B6D11}
+.core-num.gray{background:#F1EFE8;color:#5F5E5A}
+.core-meta{display:flex;align-items:center;gap:8px;flex-shrink:0}
+.q-badge{font-size:11px;background:var(--color-background-secondary);color:var(--color-text-secondary);border:0.5px solid var(--color-border-tertiary);border-radius:4px;padding:2px 7px}
+.chevron{font-size:12px;color:var(--color-text-secondary);transition:transform 0.2s}
+.chevron.open{transform:rotate(180deg)}
+.core-body{display:none;padding:1rem 1.25rem}
+.core-body.open{display:block}
+.covers-box{background:var(--color-background-secondary);border-radius:var(--border-radius-md);padding:10px 14px;margin-bottom:1rem;border-left:3px solid #7F77DD}
+.covers-box h3{font-size:11px;font-weight:500;color:var(--color-text-secondary);text-transform:uppercase;letter-spacing:0.05em;margin-bottom:6px}
+.covers-box .q-item{font-size:12.5px;color:var(--color-text-secondary);padding:3px 0;border-bottom:0.5px solid var(--color-border-tertiary);line-height:1.4}
+.covers-box .q-item:last-child{border-bottom:none;padding-bottom:0}
+.covers-box .q-item span{font-weight:500;color:var(--color-text-primary);margin-right:4px}
+.answer-box h3{font-size:13px;font-weight:500;color:var(--color-text-secondary);text-transform:uppercase;letter-spacing:0.05em;margin-bottom:10px}
+.answer-content{font-size:13.5px;line-height:1.6;color:var(--color-text-primary)}
+.answer-content h4{font-size:13px;font-weight:500;color:var(--color-text-primary);margin:12px 0 4px;padding-bottom:2px;border-bottom:0.5px solid var(--color-border-tertiary)}
+.answer-content p{margin:4px 0;color:var(--color-text-secondary)}
+.answer-content ul{padding-left:14px;margin:4px 0}
+.answer-content li{margin:3px 0;color:var(--color-text-secondary)}
+.answer-content li strong{color:var(--color-text-primary);font-weight:500}
+.answer-content .def{background:var(--color-background-secondary);border-radius:var(--border-radius-md);padding:8px 12px;margin:6px 0;font-size:13px;border-left:2px solid var(--color-border-secondary)}
+.answer-content .example{background:var(--color-background-info);border-radius:var(--border-radius-md);padding:8px 12px;margin:6px 0;font-size:12.5px;color:var(--color-text-secondary)}
+.answer-content .example strong{color:var(--color-text-info);font-weight:500}
+.usage-box{margin-top:1rem;background:var(--color-background-secondary);border-radius:var(--border-radius-md);padding:10px 14px;border-left:3px solid #1D9E75}
+.usage-box h3{font-size:11px;font-weight:500;color:var(--color-text-secondary);text-transform:uppercase;letter-spacing:0.05em;margin-bottom:8px}
+.usage-item{font-size:12px;padding:4px 0;border-bottom:0.5px solid var(--color-border-tertiary);color:var(--color-text-secondary)}
+.usage-item:last-child{border-bottom:none}
+.usage-item .qn{font-weight:500;color:var(--color-text-primary);margin-right:4px}
+.usage-item .tip{color:var(--color-text-info)}
+.divider{height:0.5px;background:var(--color-border-tertiary);margin:10px 0}
+</style>
+
+<div class="sheet">
+<h2 class="sr-only">OB Exam Preparation Sheet — Grouped Core Answers for BBA Organizational Behavior</h2>
+
+<div class="header">
+  <h1>OB Exam Preparation Sheet</h1>
+  <p>Bachelor of Business Administration · Organizational Behavior · Chapters 4–8</p>
+  <div class="stats">
+    <div class="stat"><div class="num">15</div><div class="lbl">Questions covered</div></div>
+    <div class="stat"><div class="num">7</div><div class="lbl">Core answers</div></div>
+    <div class="stat"><div class="num">~15</div><div class="lbl">Min per answer</div></div>
+  </div>
+</div>
+
+<div class="toc">
+  <h2>Quick navigation — tap to jump</h2>
+  <div class="toc-grid">
+    <div class="toc-item" onclick="jump('c1')"><span class="toc-badge">Q1,2</span>Perception: factors & shortcuts</div>
+    <div class="toc-item" onclick="jump('c2')"><span class="toc-badge">Q3,4</span>Decision-making under risk & uncertainty</div>
+    <div class="toc-item" onclick="jump('c3')"><span class="toc-badge">Q5,6,7,8,9</span>Personality, biases & MBTI</div>
+    <div class="toc-item" onclick="jump('c4')"><span class="toc-badge">Q10</span>MBTI & team performance</div>
+    <div class="toc-item" onclick="jump('c5')"><span class="toc-badge">Q11</span>Hofstede's cultural framework</div>
+    <div class="toc-item" onclick="jump('c6')"><span class="toc-badge">Q12,13</span>Herzberg's two-factor theory</div>
+    <div class="toc-item" onclick="jump('c7')"><span class="toc-badge">Q14,15</span>Kotter's 8-step model</div>
+  </div>
+</div>
+
+<!-- CORE 1 -->
+<div class="core" id="c1">
+  <div class="core-header" onclick="toggle('c1')">
+    <div class="core-title">
+      <span class="core-num purple">1</span>
+      Perception — influencing factors & common shortcuts
+    </div>
+    <div class="core-meta">
+      <span class="q-badge">Q1 + Q2</span>
+      <span class="chevron" id="chev-c1">▼</span>
+    </div>
+  </div>
+  <div class="core-body" id="body-c1">
+    <div class="covers-box">
+      <h3>Covers these questions (exact wording)</h3>
+      <div class="q-item"><span>Q1.</span>Now, discuss the factors that influence perception of an individual in an organization.</div>
+      <div class="q-item"><span>Q2.</span>Recall common shortcuts for judging others with examples.</div>
+    </div>
+    <div class="answer-box">
+      <h3>Answer (exam-ready)</h3>
+      <div class="answer-content">
+        <div class="def">Perception is the process by which individuals organize and interpret sensory impressions to give meaning to their environment. It shapes behavior because people act on their perception, not objective reality.</div>
+
+        <h4>A. Factors influencing perception</h4>
+        <p><strong>1. Factors in the Perceiver</strong></p>
+        <ul>
+          <li><strong>Attitudes</strong> — shape what we notice and how we interpret it</li>
+          <li><strong>Motives / Emotions</strong> — unsatisfied needs direct attention (e.g., a hungry person notices food ads); anger distorts judgment</li>
+          <li><strong>Interests & Experience</strong> — past experience focuses attention; people perceive what they can relate to</li>
+          <li><strong>Expectations</strong> — we tend to see what we expect to see</li>
+        </ul>
+        <p><strong>2. Factors in the Target</strong></p>
+        <ul>
+          <li><strong>Novelty, motion, sound, size</strong> — unusual or loud targets attract more attention</li>
+          <li><strong>Background, proximity, similarity</strong> — objects near each other are grouped; similar things are perceived as alike</li>
+        </ul>
+        <p><strong>3. Factors in the Situation</strong></p>
+        <ul>
+          <li><strong>Time</strong> — a delayed report may be ignored</li>
+          <li><strong>Work setting</strong> — stressful environments distort perception</li>
+          <li><strong>Social setting</strong> — same behavior interpreted differently across contexts (e.g., earrings in a classroom vs. disco)</li>
+        </ul>
+
+        <h4>B. Common shortcuts in judging others</h4>
+        <ul>
+          <li><strong>Selective Perception</strong> — we filter information based on our background, interests, and attitudes; we see what we want to see</li>
+          <li><strong>Halo Effect</strong> — forming a positive general impression from one good trait (e.g., an attractive candidate assumed to be competent)</li>
+          <li><strong>Horns Effect</strong> — forming a negative impression from one negative trait</li>
+          <li><strong>Contrast Effect</strong> — judging a person relative to others recently encountered, not on their own merits</li>
+          <li><strong>Stereotyping</strong> — judging based on the perceived group the person belongs to (e.g., assuming all engineers are introverted)</li>
+        </ul>
+        <div class="example"><strong>Example (Q2):</strong> An interviewer sees 3 weak candidates, then a mediocre one — the mediocre candidate seems strong due to contrast effect. A manager assumes a quiet employee is unproductive (stereotyping).</div>
+      </div>
+    </div>
+    <div class="usage-box">
+      <h3>How to use this answer per question</h3>
+      <div class="usage-item"><span class="qn">Q1:</span>Write both Part A and Part B. Emphasize the 3-category framework (perceiver, target, situation). Use the subpoints as bullet answers.</div>
+      <div class="usage-item"><span class="qn">Q2:</span>Focus on Part B only. Give a brief 1-line definition for each shortcut + one example each. Skip Part A details.</div>
+    </div>
+  </div>
+</div>
+
+<!-- CORE 2 -->
+<div class="core" id="c2">
+  <div class="core-header" onclick="toggle('c2')">
+    <div class="core-title">
+      <span class="core-num teal">2</span>
+      Decision-making under risk & uncertainty (real-life scenarios)
+    </div>
+    <div class="core-meta">
+      <span class="q-badge">Q3 + Q4</span>
+      <span class="chevron" id="chev-c2">▼</span>
+    </div>
+  </div>
+  <div class="core-body" id="body-c2">
+    <div class="covers-box">
+      <h3>Covers these questions (exact wording)</h3>
+      <div class="q-item"><span>Q3.</span>Give a real-life scenario of decision-making under risk.</div>
+      <div class="q-item"><span>Q4.</span>Give a real-life scenario of decision-making under uncertainty.</div>
+    </div>
+    <div class="answer-box">
+      <h3>Answer (exam-ready)</h3>
+      <div class="answer-content">
+        <div class="def">Decision-making conditions range from certainty (all outcomes known) → risk (probabilities estimable) → uncertainty (no probability data available).</div>
+
+        <h4>Decision-making under risk — definition & scenario</h4>
+        <p>The decision maker can estimate the likelihood of outcomes using historical data, past experience, or statistical analysis.</p>
+        <div class="example"><strong>Scenario:</strong> A pharmaceutical company decides whether to launch a new drug. Based on clinical trial data and past drug launches, they estimate a 70% chance of FDA approval and a 30% chance of rejection. They assign probabilities to each outcome and proceed based on expected value. → This is risk because historical data allows probability estimation.</div>
+
+        <h4>Decision-making under uncertainty — definition & scenario</h4>
+        <p>The decision maker has neither certainty nor reliable probability estimates. Choices depend on limited information and the psychological orientation of the decision maker.</p>
+        <div class="example"><strong>Scenario:</strong> A startup founder decides to enter an entirely new market — plant-based meat — in Bangladesh where no prior market data exists. No historical sales figures, no consumer surveys, no competitor benchmarks are available. The founder makes the call based on intuition and limited observation. → This is uncertainty because no probability can be assigned to outcomes.</div>
+
+        <h4>Key distinction to mention in exam</h4>
+        <ul>
+          <li><strong>Risk</strong> = outcomes unknown, but probabilities are estimable (data-driven)</li>
+          <li><strong>Uncertainty</strong> = outcomes unknown AND probabilities unknown (judgment-driven)</li>
+        </ul>
+      </div>
+    </div>
+    <div class="usage-box">
+      <h3>How to use this answer per question</h3>
+      <div class="usage-item"><span class="qn">Q3:</span>Write the definition of risk, then the pharma scenario. End with the key distinction. ~half a page.</div>
+      <div class="usage-item"><span class="qn">Q4:</span>Write the definition of uncertainty, then the startup scenario. End with the key distinction. ~half a page.</div>
+    </div>
+  </div>
+</div>
+
+<!-- CORE 3 -->
+<div class="core" id="c3">
+  <div class="core-header" onclick="toggle('c3')">
+    <div class="core-title">
+      <span class="core-num coral">3</span>
+      Personality determinants + biases (anchoring, overconfidence, confirmation)
+    </div>
+    <div class="core-meta">
+      <span class="q-badge">Q5 · Q6 · Q7 · Q8 · Q9</span>
+      <span class="chevron" id="chev-c3">▼</span>
+    </div>
+  </div>
+  <div class="core-body" id="body-c3">
+    <div class="covers-box">
+      <h3>Covers these questions (exact wording)</h3>
+      <div class="q-item"><span>Q5.</span>Now discuss those two determinants of personality.</div>
+      <div class="q-item"><span>Q6.</span>Describe the concept of anchoring bias with an example.</div>
+      <div class="q-item"><span>Q7.</span>Describe the concept of overconfidence bias with an example. Differentiate overconfidence from self-esteem.</div>
+      <div class="q-item"><span>Q8.</span>Identify the type of bias in the following situation: A manager ignores negative feedback and only focuses on positive reports.</div>
+      <div class="q-item"><span>Q9a.</span>A manager ignores negative feedback and only focuses on positive reports.</div>
+      <div class="q-item"><span>Q9b.</span>Evaluate the impact of biases on organizational decision-making.</div>
+    </div>
+    <div class="answer-box">
+      <h3>Answer (exam-ready)</h3>
+      <div class="answer-content">
+
+        <h4>Part A — Two determinants of personality (Q5)</h4>
+        <div class="def">Personality is a unique combination of emotional, thought, and behavioral patterns. It is shaped by two key determinants: Heredity and Environment.</div>
+        <ul>
+          <li><strong>Heredity</strong> — Factors determined at conception: physical stature, temperament, muscle composition, energy level, and biological rhythms. Biological parents influence innate psychological makeup. Research supports heredity as a stronger influence than environment.</li>
+          <li><strong>Environment</strong> — Heredity provides the blueprint; environment shapes how traits develop. Three sub-factors:
+            <ul>
+              <li><strong>Social factors</strong> — family, school, peer groups, religion</li>
+              <li><strong>Cultural factors</strong> — traditions, practices, social norms</li>
+              <li><strong>Economic factors</strong> — low-income backgrounds linked to low self-confidence</li>
+            </ul>
+          </li>
+        </ul>
+        <div class="example"><strong>Example:</strong> A person may inherit mathematical ability (heredity), but without proper education (environment), it cannot develop.</div>
+
+        <div class="divider"></div>
+
+        <h4>Part B — Anchoring bias (Q6)</h4>
+        <p>Decision makers fixate on the first piece of information received (the "anchor") and fail to adequately adjust for later information.</p>
+        <div class="example"><strong>Example:</strong> A car salesman first quotes BDT 30,00,000 for a car. Even after negotiation, the buyer settles at 25,00,000 — still anchored to the original high price. A fairer price may have been 20,00,000.</div>
+
+        <div class="divider"></div>
+
+        <h4>Part C — Overconfidence bias vs. self-esteem (Q7)</h4>
+        <ul>
+          <li><strong>Overconfidence bias</strong> — Decision makers think they know more than they actually do and hold unrealistically positive views of their own performance. It leads to poor risk assessment.</li>
+          <li><strong>Self-esteem</strong> — The degree to which a person likes or values themselves. High self-esteem people believe they can succeed; they take more risks in job selection and perform better. It is a stable personality trait, not a bias.</li>
+        </ul>
+        <ul>
+          <li><strong>Key difference:</strong> Overconfidence is a cognitive error (distorted judgment), while self-esteem is a personality trait (stable self-worth). Overconfidence can coexist with low OR high self-esteem.</li>
+        </ul>
+        <div class="example"><strong>Example (overconfidence):</strong> A new fund manager predicts a 95% chance of outperforming the market without sufficient data — leading to reckless investment decisions.</div>
+
+        <div class="divider"></div>
+
+        <h4>Part D — Bias identification: Q8 & Q9a</h4>
+        <p>Situation: "A manager ignores negative feedback and only focuses on positive reports."</p>
+        <p>→ <strong>Confirmation Bias</strong> — The manager seeks out information that confirms existing beliefs and discounts contradictory evidence. This reinforces poor decisions.</p>
+
+        <div class="divider"></div>
+
+        <h4>Part E — Impact of biases on organizational decision-making (Q9b)</h4>
+        <ul>
+          <li><strong>Poor resource allocation</strong> — overconfidence leads to over-investment in failing projects (sunk cost error)</li>
+          <li><strong>Flawed problem identification</strong> — selective perception causes managers to miss real issues</li>
+          <li><strong>Groupthink</strong> — confirmation bias creates echo chambers where dissent is ignored</li>
+          <li><strong>Hiring errors</strong> — halo/horns effect and stereotyping produce biased recruitment</li>
+          <li><strong>Strategic myopia</strong> — anchoring to past strategy prevents adaptation to market change</li>
+        </ul>
+        <p>Overall: Biases reduce decision quality, increase costs, damage morale, and undermine organizational effectiveness.</p>
+      </div>
+    </div>
+    <div class="usage-box">
+      <h3>How to use this answer per question</h3>
+      <div class="usage-item"><span class="qn">Q5:</span>Write Part A only. Include both determinants with sub-factors and the example. ~¾ page.</div>
+      <div class="usage-item"><span class="qn">Q6:</span>Write Part B only. Define + example. 3–4 lines is enough.</div>
+      <div class="usage-item"><span class="qn">Q7:</span>Write Part C. Define both terms, give clear difference table/bullet, and example.</div>
+      <div class="usage-item"><span class="qn">Q8/Q9a:</span>Write Part D. Name the bias (confirmation bias), define it in 1–2 lines, explain how it fits the scenario.</div>
+      <div class="usage-item"><span class="qn">Q9b:</span>Write Part E. List 4–5 impacts with brief explanations. Add a closing line on overall org. effectiveness.</div>
+    </div>
+  </div>
+</div>
+
+<!-- CORE 4 -->
+<div class="core" id="c4">
+  <div class="core-header" onclick="toggle('c4')">
+    <div class="core-title">
+      <span class="core-num blue">4</span>
+      MBTI personality types — team performance & conflict resolution
+    </div>
+    <div class="core-meta">
+      <span class="q-badge">Q10</span>
+      <span class="chevron" id="chev-c4">▼</span>
+    </div>
+  </div>
+  <div class="core-body" id="body-c4">
+    <div class="covers-box">
+      <h3>Covers these questions (exact wording)</h3>
+      <div class="q-item"><span>Q10.</span>Describe the process by which an understanding of MBTI personality types improves team performance and conflict resolution within a professional organization.</div>
+    </div>
+    <div class="answer-box">
+      <h3>Answer (exam-ready)</h3>
+      <div class="answer-content">
+        <div class="def">The Myers-Briggs Type Indicator (MBTI) classifies individuals into 16 personality types using four dichotomies: Extraversion/Introversion (E/I), Sensing/Intuition (S/N), Thinking/Feeling (T/F), Judging/Perceiving (J/P).</div>
+
+        <h4>The four MBTI dimensions (brief)</h4>
+        <ul>
+          <li><strong>E vs I</strong> — Extraverts: social, assertive. Introverts: quiet, prefer depth.</li>
+          <li><strong>S vs N</strong> — Sensing: practical, detail-oriented. Intuition: big-picture, creative.</li>
+          <li><strong>T vs F</strong> — Thinking: logical, objective. Feeling: empathetic, value-driven.</li>
+          <li><strong>J vs P</strong> — Judging: structured, decisive. Perceiving: flexible, spontaneous.</li>
+        </ul>
+
+        <h4>How MBTI improves team performance</h4>
+        <ul>
+          <li><strong>Role alignment</strong> — Assigning tasks based on type (e.g., S-types for detail work, N-types for brainstorming) maximizes productivity</li>
+          <li><strong>Diverse teams</strong> — Mixing T and F types ensures both logical analysis and people-sensitive decisions</li>
+          <li><strong>Communication style awareness</strong> — E-types prefer verbal discussion; I-types prefer written briefs. Teams can adapt communication channels accordingly</li>
+          <li><strong>Leadership style matching</strong> — J-types suit project management roles; P-types suit research and exploration</li>
+        </ul>
+
+        <h4>How MBTI improves conflict resolution</h4>
+        <ul>
+          <li><strong>Understanding differences</strong> — Knowing that a colleague's bluntness reflects T-type logic (not hostility) reduces interpersonal friction</li>
+          <li><strong>Empathy building</strong> — Team members learn to appreciate why others react differently to stress or deadlines</li>
+          <li><strong>Conflict style mapping</strong> — J vs P conflicts (planning vs. flexibility) can be resolved by creating structured yet adaptive project plans</li>
+          <li><strong>Mediation approach</strong> — F-types respond better to emotion-sensitive mediation; T-types to fact-based resolution</li>
+        </ul>
+
+        <div class="example"><strong>Example:</strong> A product team discovers through MBTI that 3 members are strong I-types. The manager shifts weekly verbal brainstorming to asynchronous written idea submission — output quality improves and stress reduces.</div>
+      </div>
+    </div>
+    <div class="usage-box">
+      <h3>How to use this answer per question</h3>
+      <div class="usage-item"><span class="qn">Q10:</span>Write all 3 sections. Start with MBTI definition + 4 dimensions (brief), then expand on both team performance and conflict resolution with at least 3 points each. End with the example. ~1 to 1.5 pages.</div>
+    </div>
+  </div>
+</div>
+
+<!-- CORE 5 -->
+<div class="core" id="c5">
+  <div class="core-header" onclick="toggle('c5')">
+    <div class="core-title">
+      <span class="core-num amber">5</span>
+      Hofstede's framework for cultural values
+    </div>
+    <div class="core-meta">
+      <span class="q-badge">Q11</span>
+      <span class="chevron" id="chev-c5">▼</span>
+    </div>
+  </div>
+  <div class="core-body" id="body-c5">
+    <div class="covers-box">
+      <h3>Covers these questions (exact wording)</h3>
+      <div class="q-item"><span>Q11.</span>Now, describe Hofstede's framework for understanding cultural values.</div>
+    </div>
+    <div class="answer-box">
+      <h3>Answer (exam-ready)</h3>
+      <div class="answer-content">
+        <div class="def">Geert Hofstede surveyed 116,000+ IBM employees across 40 countries and identified five dimensions of national cultural values that explain variations in workplace behavior across societies.</div>
+
+        <h4>Five cultural value dimensions</h4>
+        <ul>
+          <li><strong>1. Power Distance</strong> — The degree to which people accept unequal distribution of power. High power distance cultures (e.g., Bangladesh, Malaysia) accept hierarchical authority. Low power distance cultures (e.g., Denmark) expect equality and participative management.</li>
+          <li><strong>2. Individualism vs. Collectivism</strong> — Individualism: people prioritize personal rights and independence (e.g., USA). Collectivism: group loyalty and mutual care are paramount (e.g., Japan, China).</li>
+          <li><strong>3. Masculinity vs. Femininity</strong> — Masculine cultures favor achievement, assertiveness, and distinct gender roles (e.g., Japan). Feminine cultures value quality of life, equality, and cooperation (e.g., Sweden).</li>
+          <li><strong>4. Uncertainty Avoidance</strong> — High UA cultures (e.g., Greece) use strict laws and structures to minimize ambiguity. Low UA cultures (e.g., Singapore) tolerate change and take risks more comfortably.</li>
+          <li><strong>5. Long-term vs. Short-term Orientation</strong> — Long-term cultures value thrift, persistence, and tradition (e.g., China). Short-term cultures focus on the present, quick results, and adaptability (e.g., USA).</li>
+        </ul>
+
+        <h4>Implications for organizations</h4>
+        <ul>
+          <li>Multinational companies must adapt management style to local cultural dimensions</li>
+          <li>High power distance cultures need top-down leadership; low power distance cultures need participative approaches</li>
+          <li>Motivation strategies must align with cultural orientation (individual vs. group rewards)</li>
+        </ul>
+        <div class="example"><strong>Example:</strong> A Japanese firm operating in Sweden must shift from top-down masculine leadership to collaborative, equality-driven management — directly reflecting Hofstede's masculinity vs. femininity dimension.</div>
+      </div>
+    </div>
+    <div class="usage-box">
+      <h3>How to use this answer per question</h3>
+      <div class="usage-item"><span class="qn">Q11:</span>Start with Hofstede's background (1-liner). List all 5 dimensions with clear definitions and 1 country example each. Add implications. End with the example. Full 1–1.5 pages.</div>
+    </div>
+  </div>
+</div>
+
+<!-- CORE 6 -->
+<div class="core" id="c6">
+  <div class="core-header" onclick="toggle('c6')">
+    <div class="core-title">
+      <span class="core-num pink">6</span>
+      Herzberg's two-factor theory + money as motivator
+    </div>
+    <div class="core-meta">
+      <span class="q-badge">Q12 + Q13</span>
+      <span class="chevron" id="chev-c6">▼</span>
+    </div>
+  </div>
+  <div class="core-body" id="body-c6">
+    <div class="covers-box">
+      <h3>Covers these questions (exact wording)</h3>
+      <div class="q-item"><span>Q12.</span>Explain the reasons for which Herzberg argue that 'money is not a motivator,' and mention the implications for a manager attempting to increase employee engagement.</div>
+      <div class="q-item"><span>Q13.</span>Explain the two factors theory developed by Fredrick Herzberg.</div>
+    </div>
+    <div class="answer-box">
+      <h3>Answer (exam-ready)</h3>
+      <div class="answer-content">
+        <div class="def">Frederick Herzberg's Two-Factor Theory distinguishes between Hygiene Factors (which prevent dissatisfaction) and Motivation Factors (which create satisfaction). These two sets operate independently — eliminating dissatisfaction does not create satisfaction.</div>
+
+        <h4>Hygiene factors (prevent dissatisfaction — but do NOT motivate)</h4>
+        <ul>
+          <li>Company policy, Supervision, Relationship with boss</li>
+          <li>Work conditions, <strong>Salary</strong>, Relationship with peers</li>
+        </ul>
+        <p>When absent → dissatisfaction. When present → employees are "not dissatisfied" but NOT actively motivated.</p>
+
+        <h4>Motivation factors (create satisfaction & motivate)</h4>
+        <ul>
+          <li><strong>Achievement, Recognition, Responsibility, Advancement, Growth</strong></li>
+        </ul>
+        <p>These are intrinsic factors that generate genuine engagement and effort.</p>
+
+        <h4>Why Herzberg argues money is NOT a motivator (Q12)</h4>
+        <ul>
+          <li>Salary is a <strong>hygiene factor</strong> — it can remove dissatisfaction (if too low) but does not create lasting motivation</li>
+          <li>Once salary meets expectations, additional pay does not increase performance or engagement</li>
+          <li>Motivation comes from intrinsic factors: meaningful work, recognition, and growth — not external rewards</li>
+          <li>Employees who are only motivated by pay will leave once a higher-paying offer appears — no genuine engagement</li>
+        </ul>
+
+        <h4>Managerial implications for employee engagement (Q12)</h4>
+        <ul>
+          <li>Ensure hygiene factors are adequate (fair pay, good conditions) — this removes friction</li>
+          <li>Then focus on motivators: give employees autonomy, recognition, career development opportunities</li>
+          <li>Design jobs with growth potential (job enrichment) rather than just raising salaries</li>
+          <li>Celebrate achievements publicly; delegate meaningful responsibility</li>
+        </ul>
+        <div class="example"><strong>Example:</strong> Google offers competitive salaries (hygiene) but drives engagement through meaningful projects, peer recognition programs, and promotion pathways (motivators) — consistent with Herzberg's framework.</div>
+      </div>
+    </div>
+    <div class="usage-box">
+      <h3>How to use this answer per question</h3>
+      <div class="usage-item"><span class="qn">Q13:</span>Write the definition + both factors (hygiene & motivation) with their lists. Explain the core principle. ~¾ page.</div>
+      <div class="usage-item"><span class="qn">Q12:</span>Write the full answer including Q13 content first (briefly), then emphasize the "why money is not a motivator" section and the managerial implications. Add the example. ~1–1.5 pages.</div>
+    </div>
+  </div>
+</div>
+
+<!-- CORE 7 -->
+<div class="core" id="c7">
+  <div class="core-header" onclick="toggle('c7')">
+    <div class="core-title">
+      <span class="core-num green">7</span>
+      Kotter's 8-step model — leadership vs. management
+    </div>
+    <div class="core-meta">
+      <span class="q-badge">Q14 + Q15</span>
+      <span class="chevron" id="chev-c7">▼</span>
+    </div>
+  </div>
+  <div class="core-body" id="body-c7">
+    <div class="covers-box">
+      <h3>Covers these questions (exact wording)</h3>
+      <div class="q-item"><span>Q14.</span>Critically analyze the reason for which John Kotter emphasizes 'Leadership' over 'Management' in his 8-step model. Explain the eight-step model for implementing change.</div>
+      <div class="q-item"><span>Q15.</span>Critically analyze the reason for which Kotter emphasizes 'Leadership' over 'Management' in his 8-step model. Explain the statement "a transformation will be succeeded with only strong management".</div>
+    </div>
+    <div class="answer-box">
+      <h3>Answer (exam-ready)</h3>
+      <div class="answer-content">
+        <div class="def">John Kotter (1996), Harvard Business School Professor, developed his 8-Step Change Model based on research on 100 organizations undergoing change. He argues that successful transformation requires leadership — not just management.</div>
+
+        <h4>Why Kotter emphasizes leadership over management</h4>
+        <ul>
+          <li><strong>Management</strong> = maintains order, controls processes, manages systems and budgets — it is about stability</li>
+          <li><strong>Leadership</strong> = creates vision, inspires people, drives transformation — it is about change</li>
+          <li>Kotter observed that most change failures stem from <strong>over-managed and under-led</strong> processes</li>
+          <li>Management can produce a plan, but only leadership can create the emotional buy-in and urgency needed to move people</li>
+          <li>Steps 1–4 (urgency, coalition, vision, communication) are inherently leadership functions; management alone cannot achieve them</li>
+        </ul>
+
+        <h4>Kotter's 8-step model</h4>
+        <ul>
+          <li><strong>Step 1 — Create a sense of urgency:</strong> Make people feel the change is necessary; spark motivation</li>
+          <li><strong>Step 2 — Form a guiding coalition:</strong> Build a team of influential leaders committed to the change</li>
+          <li><strong>Step 3 — Create a vision:</strong> Develop a clear, memorable vision that links all change activities</li>
+          <li><strong>Step 4 — Communicate the vision:</strong> Embed the vision in all communications; lead by example</li>
+          <li><strong>Step 5 — Empower others to act:</strong> Remove obstacles; encourage risk-taking and new ideas</li>
+          <li><strong>Step 6 — Create short-term wins:</strong> Celebrate early achievements to build momentum and silence critics</li>
+          <li><strong>Step 7 — Build on the change:</strong> Avoid declaring victory early; use credibility of wins to push deeper change</li>
+          <li><strong>Step 8 — Institutionalize the change:</strong> Embed new behaviors into organizational culture; show the connection between change and success</li>
+        </ul>
+
+        <h4>Critical analysis: "Transformation will succeed with only strong management" — Why this is FALSE (Q15)</h4>
+        <ul>
+          <li>Management focuses on maintaining existing systems — it lacks the visionary capacity to drive fundamental transformation</li>
+          <li>Without leadership, there is no urgency (Step 1), no inspiring vision (Step 3), and no emotional commitment from employees</li>
+          <li>Kotter's research showed that organizations that relied solely on management tools (KPIs, budgets, planning) without leadership failed to sustain change</li>
+          <li>Real transformation involves changing mindsets and culture — this requires leadership, not just control</li>
+          <li><strong>Conclusion:</strong> Management is necessary but not sufficient. Transformation requires BOTH — strong management for execution AND strong leadership for inspiration and direction.</li>
+        </ul>
+        <div class="example"><strong>Example:</strong> IBM's turnaround under Lou Gerstner (1990s) succeeded not because of tighter management controls alone, but because Gerstner provided a new cultural vision ("IBM is a services company") — classic Kotter-style leadership.</div>
+      </div>
+    </div>
+    <div class="usage-box">
+      <h3>How to use this answer per question</h3>
+      <div class="usage-item"><span class="qn">Q14:</span>Write leadership vs. management section + all 8 steps with brief explanations. End with example. ~1.5 pages.</div>
+      <div class="usage-item"><span class="qn">Q15:</span>Write leadership vs. management section + all 8 steps (same as Q14), then add the critical analysis section specifically arguing why "strong management alone is FALSE." This is the key differentiator for Q15. ~1.5–2 pages.</div>
+    </div>
+  </div>
+</div>
+
+</div>
+
+<script>
+function toggle(id){
+  const body=document.getElementById('body-'+id);
+  const chev=document.getElementById('chev-'+id);
+  const header=document.querySelector('#'+id+' .core-header');
+  const isOpen=body.classList.contains('open');
+  body.classList.toggle('open',!isOpen);
+  chev.classList.toggle('open',!isOpen);
+  header.classList.toggle('open',!isOpen);
+}
+function jump(id){
+  const el=document.getElementById(id);
+  if(el){el.scrollIntoView({behavior:'smooth',block:'start'});setTimeout(()=>{const b=document.getElementById('body-'+id);if(!b.classList.contains('open'))toggle(id);},300);}
+}
+document.querySelectorAll('.core-header').forEach(h=>{
+  const id=h.closest('.core').id;
+  h.addEventListener('click',()=>toggle(id));
+});
+toggle('c1');
+</script>
