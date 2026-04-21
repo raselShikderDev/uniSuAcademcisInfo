@@ -1,0 +1,245 @@
+
+<h2 class="sr-only">Interview preparation dashboard for React frontend developer role</h2>
+<style>
+* { box-sizing: border-box; margin: 0; padding: 0; }
+body { font-family: var(--font-sans); }
+.wrap { padding: 1rem 0; }
+.tabs { display: flex; gap: 6px; flex-wrap: wrap; margin-bottom: 1.25rem; }
+.tab { padding: 6px 14px; border-radius: 20px; border: 0.5px solid var(--color-border-secondary); font-size: 13px; cursor: pointer; background: var(--color-background-primary); color: var(--color-text-secondary); transition: all 0.15s; }
+.tab.active { background: var(--color-background-info); color: var(--color-text-info); border-color: transparent; font-weight: 500; }
+.section { display: none; }
+.section.active { display: block; }
+.card { background: var(--color-background-primary); border: 0.5px solid var(--color-border-tertiary); border-radius: var(--border-radius-lg); padding: 1rem 1.25rem; margin-bottom: 10px; cursor: pointer; transition: border-color 0.15s; }
+.card:hover { border-color: var(--color-border-secondary); }
+.card-head { display: flex; align-items: center; justify-content: space-between; }
+.q { font-size: 14px; font-weight: 500; color: var(--color-text-primary); flex: 1; padding-right: 12px; }
+.badge { font-size: 11px; padding: 2px 8px; border-radius: 10px; white-space: nowrap; flex-shrink: 0; }
+.badge.hard { background: var(--color-background-danger); color: var(--color-text-danger); }
+.badge.med { background: var(--color-background-warning); color: var(--color-text-warning); }
+.badge.easy { background: var(--color-background-success); color: var(--color-text-success); }
+.ans { display: none; margin-top: 10px; padding-top: 10px; border-top: 0.5px solid var(--color-border-tertiary); font-size: 13px; color: var(--color-text-secondary); line-height: 1.7; }
+.ans.open { display: block; }
+code { font-family: var(--font-mono); font-size: 12px; background: var(--color-background-secondary); padding: 1px 5px; border-radius: 4px; color: var(--color-text-primary); }
+.chevron { font-size: 12px; color: var(--color-text-tertiary); transition: transform 0.2s; }
+.chevron.open { transform: rotate(180deg); }
+.tip-box { background: var(--color-background-info); border-radius: var(--border-radius-md); padding: 10px 14px; font-size: 13px; color: var(--color-text-info); margin-bottom: 14px; }
+.progress-bar { height: 4px; background: var(--color-background-secondary); border-radius: 4px; margin-bottom: 1.25rem; overflow: hidden; }
+.progress-fill { height: 100%; background: var(--color-text-info); border-radius: 4px; transition: width 0.3s; }
+.done-btn { font-size: 11px; padding: 3px 10px; border-radius: 10px; border: 0.5px solid var(--color-border-secondary); background: transparent; cursor: pointer; color: var(--color-text-secondary); margin-left: 8px; }
+.done-btn.checked { background: var(--color-background-success); color: var(--color-text-success); border-color: transparent; }
+.meta { font-size: 12px; color: var(--color-text-tertiary); margin-top: 4px; }
+</style>
+
+<div class="wrap">
+<div class="tabs" id="tabs">
+  <div class="tab active" onclick="switchTab('project')">Your Project</div>
+  <div class="tab" onclick="switchTab('react')">React Core</div>
+  <div class="tab" onclick="switchTab('perf')">Performance</div>
+  <div class="tab" onclick="switchTab('ts')">TypeScript</div>
+  <div class="tab" onclick="switchTab('design')">UI/Design</div>
+  <div class="tab" onclick="switchTab('tips')">Interview Tips</div>
+</div>
+
+<div class="progress-bar"><div class="progress-fill" id="prog" style="width:0%"></div></div>
+
+<div id="project" class="section active">
+<div class="tip-box">These are the most likely questions — they submitted your repo, so they will dig into it.</div>
+
+<div class="card" onclick="toggle(this)">
+  <div class="card-head"><span class="q">Walk me through your project architecture — why this folder structure?</span><span class="badge med">Med</span><span class="chevron">▼</span></div>
+  <div class="ans">The project follows feature-colocation. <code>api/services/</code> isolates all API calls so pages never call axios directly. <code>store/</code> holds only global auth state via Zustand — nothing else needs to be global since React Query handles server state. <code>layouts/</code> separates shell chrome from page content. This means any developer can find any file in under 10 seconds.<button class="done-btn" onclick="markDone(event,this)">Mark done</button></div>
+</div>
+
+<div class="card" onclick="toggle(this)">
+  <div class="card-head"><span class="q">Why did you choose React Query instead of Redux for server state?</span><span class="badge hard">Hard</span><span class="chevron">▼</span></div>
+  <div class="ans">Redux is great for client state (UI toggles, auth). But server state has different needs: caching, background refetch, stale-while-revalidate, and deduplication. React Query gives all of this for free with <code>staleTime</code>, <code>queryKey</code> cache invalidation, and <code>useMutation</code>. Writing all of that in Redux requires thunks, reducers, loading flags, and error fields — far more boilerplate for the same result.<button class="done-btn" onclick="markDone(event,this)">Mark done</button></div>
+</div>
+
+<div class="card" onclick="toggle(this)">
+  <div class="card-head"><span class="q">How does your authentication flow work end-to-end?</span><span class="badge med">Med</span><span class="chevron">▼</span></div>
+  <div class="ans">1. User submits login form → validated by Zod + React Hook Form. 2. Axios posts to <code>/auth/login</code>. 3. Token stored in <code>localStorage</code> and in Zustand store (<code>isAuthenticated: true</code>). 4. Every subsequent request: the axios request interceptor reads the token and adds <code>Authorization: Bearer</code>. 5. If any response returns 401: the response interceptor removes the token and redirects to <code>/login</code>. 6. React Router's <code>ProtectedRoute</code> checks Zustand — if no token, redirect to login before rendering.<button class="done-btn" onclick="markDone(event,this)">Mark done</button></div>
+</div>
+
+<div class="card" onclick="toggle(this)">
+  <div class="card-head"><span class="q">What is your handleResponse() helper and why did you need it?</span><span class="badge easy">Easy</span><span class="chevron">▼</span></div>
+  <div class="ans">The API was inconsistent — some endpoints return data directly as <code>res.data</code>, others wrap it as <code>res.data.data</code>. Instead of handling this in every service, I wrote one normalizer: <code>res.data?.data ?? res.data</code>. This is the "adapter" pattern — it isolates the inconsistency in one place so the rest of the app deals with clean typed data.<button class="done-btn" onclick="markDone(event,this)">Mark done</button></div>
+</div>
+
+<div class="card" onclick="toggle(this)">
+  <div class="card-head"><span class="q">How did you handle form validation? Why Zod + React Hook Form?</span><span class="badge easy">Easy</span><span class="chevron">▼</span></div>
+  <div class="ans">React Hook Form is performance-first — it uses uncontrolled inputs so the component doesn't re-render on every keystroke. Zod gives me schema-based validation with full TypeScript inference, so the same schema that validates the form also types the submitted data. I connect them with <code>zodResolver</code>. This means validation rules, types, and error messages all come from one schema — no duplication.<button class="done-btn" onclick="markDone(event,this)">Mark done</button></div>
+</div>
+
+<div class="card" onclick="toggle(this)">
+  <div class="card-head"><span class="q">How did you implement lazy loading and why?</span><span class="badge med">Med</span><span class="chevron">▼</span></div>
+  <div class="ans">Each page component is wrapped in <code>React.lazy()</code> and dynamically imported. The router wraps each route in <code>&lt;Suspense fallback={&lt;Loader /&gt;}&gt;</code>. This means the JS bundle for the Courses page is only downloaded when the user navigates there — the initial bundle is much smaller, so the app loads faster on first visit. Vite handles the code-splitting automatically based on the dynamic imports.<button class="done-btn" onclick="markDone(event,this)">Mark done</button></div>
+</div>
+
+<div class="card" onclick="toggle(this)">
+  <div class="card-head"><span class="q">What would you improve if you had more time?</span><span class="badge easy">Easy</span><span class="chevron">▼</span></div>
+  <div class="ans">Three things: 1. Pagination — currently fetching all records at once which won't scale. I'd add cursor-based or offset pagination with React Query's <code>useInfiniteQuery</code>. 2. Optimistic updates — right now delete/update waits for the server. I'd use React Query's <code>onMutate</code> to update the cache instantly, then roll back on error. 3. Better error boundaries — currently toast handles errors globally but I'd add React Error Boundaries per page for crash isolation.<button class="done-btn" onclick="markDone(event,this)">Mark done</button></div>
+</div>
+</div>
+
+<div id="react" class="section">
+<div class="tip-box">Core React concepts — expect 2–4 of these in any interview.</div>
+
+<div class="card" onclick="toggle(this)">
+  <div class="card-head"><span class="q">What is the difference between useEffect and useLayoutEffect?</span><span class="badge hard">Hard</span><span class="chevron">▼</span></div>
+  <div class="ans"><code>useEffect</code> runs asynchronously after the browser paints — it won't block the visual update. <code>useLayoutEffect</code> runs synchronously after DOM mutations but before the browser paints — useful when you need to measure DOM elements or prevent visual flicker (e.g. tooltip positioning). In 95% of cases use <code>useEffect</code>. Use <code>useLayoutEffect</code> only when you see a flicker.<button class="done-btn" onclick="markDone(event,this)">Mark done</button></div>
+</div>
+
+<div class="card" onclick="toggle(this)">
+  <div class="card-head"><span class="q">Explain the React rendering cycle and when re-renders happen.</span><span class="badge hard">Hard</span><span class="chevron">▼</span></div>
+  <div class="ans">A component re-renders when: 1. Its own state changes. 2. Its parent re-renders (even if props haven't changed, unless wrapped in <code>React.memo</code>). 3. A context value it consumes changes. 4. A hook it uses returns a new value. React then runs reconciliation — diffs the virtual DOM tree — and only commits actual DOM changes. The render phase is pure (no side effects); the commit phase applies changes and runs effects.<button class="done-btn" onclick="markDone(event,this)">Mark done</button></div>
+</div>
+
+<div class="card" onclick="toggle(this)">
+  <div class="card-head"><span class="q">What is the difference between useMemo and useCallback?</span><span class="badge med">Med</span><span class="chevron">▼</span></div>
+  <div class="ans"><code>useMemo</code> memoizes a computed value — it re-runs the function only when dependencies change, returns the value. <code>useCallback</code> memoizes a function reference — it returns the same function instance between renders unless dependencies change. <code>useCallback(fn, deps)</code> is equivalent to <code>useMemo(() => fn, deps)</code>. Use <code>useCallback</code> when passing callbacks to <code>React.memo</code> children so they don't re-render on every parent render.<button class="done-btn" onclick="markDone(event,this)">Mark done</button></div>
+</div>
+
+<div class="card" onclick="toggle(this)">
+  <div class="card-head"><span class="q">What is prop drilling and how do you solve it?</span><span class="badge easy">Easy</span><span class="chevron">▼</span></div>
+  <div class="ans">Prop drilling is passing data through multiple intermediate components that don't use it, just to reach a deeply nested child. Solutions: 1. React Context — good for global/semi-global state like theme, auth. 2. Zustand/state management — used in this project for auth. 3. Component composition — restructure so the component that needs the data is rendered closer to where the data lives. 4. React Query — for server data, any component can query directly without passing through parents.<button class="done-btn" onclick="markDone(event,this)">Mark done</button></div>
+</div>
+
+<div class="card" onclick="toggle(this)">
+  <div class="card-head"><span class="q">Explain the key prop — why is it important in lists?</span><span class="badge easy">Easy</span><span class="chevron">▼</span></div>
+  <div class="ans">The <code>key</code> prop tells React which items in a list have changed, been added, or removed. Without keys (or with index as key), React re-renders the whole list on change and can produce bugs — e.g. an input's focus or a component's local state can jump to the wrong item. Keys must be stable and unique. Using array index as key is wrong when the list can be reordered or filtered because the index changes even when the item doesn't.<button class="done-btn" onclick="markDone(event,this)">Mark done</button></div>
+</div>
+
+<div class="card" onclick="toggle(this)">
+  <div class="card-head"><span class="q">What are controlled vs uncontrolled components?</span><span class="badge med">Med</span><span class="chevron">▼</span></div>
+  <div class="ans">Controlled: form input's value is driven by React state — every keystroke calls <code>setState</code>, React owns the value. Uncontrolled: the DOM owns the value, you read it via a ref when needed. React Hook Form uses uncontrolled inputs by default (via refs), which is why it's fast — no re-render on every keystroke. You'd use controlled when you need to validate or transform input in real time, or drive the input value programmatically.<button class="done-btn" onclick="markDone(event,this)">Mark done</button></div>
+</div>
+</div>
+
+<div id="perf" class="section">
+<div class="tip-box">Performance is a core skill for this role — know these deeply.</div>
+
+<div class="card" onclick="toggle(this)">
+  <div class="card-head"><span class="q">How did you optimize performance in this project?</span><span class="badge med">Med</span><span class="chevron">▼</span></div>
+  <div class="ans">Four main optimizations: 1. React Query <code>staleTime</code> — categories are cached for 5 min, so navigating back doesn't refetch. 2. Lazy loading — each page is a separate bundle chunk, so initial load is minimal. 3. React Hook Form — avoids controlled input re-renders. 4. Zustand over Context — Zustand only re-renders components that subscribe to the specific slice they use; Context re-renders all consumers on any change.<button class="done-btn" onclick="markDone(event,this)">Mark done</button></div>
+</div>
+
+<div class="card" onclick="toggle(this)">
+  <div class="card-head"><span class="q">What is code splitting and how does Vite do it?</span><span class="badge med">Med</span><span class="chevron">▼</span></div>
+  <div class="ans">Code splitting breaks the JS bundle into smaller chunks loaded on demand. Vite uses Rollup under the hood — any dynamic import (<code>import()</code>) automatically becomes a separate chunk. <code>React.lazy()</code> wraps dynamic imports so React knows to load the chunk when the component is first needed. The result: a 50kb initial bundle instead of 500kb — critical for time-to-interactive on slower connections.<button class="done-btn" onclick="markDone(event,this)">Mark done</button></div>
+</div>
+
+<div class="card" onclick="toggle(this)">
+  <div class="card-head"><span class="q">When would you use React.memo() and what are its pitfalls?</span><span class="badge hard">Hard</span><span class="chevron">▼</span></div>
+  <div class="ans"><code>React.memo()</code> wraps a component to skip re-renders when props haven't changed (shallow comparison). Use it for: expensive render components that receive stable props, list items in a large list. Pitfalls: 1. If a parent passes an inline object or function as prop, it's a new reference every render and memo won't help — must use <code>useMemo</code>/<code>useCallback</code>. 2. The shallow comparison itself has a cost — don't memo cheap components. 3. It only compares props, not context or internal state.<button class="done-btn" onclick="markDone(event,this)">Mark done</button></div>
+</div>
+
+<div class="card" onclick="toggle(this)">
+  <div class="card-head"><span class="q">What is the virtual DOM and how does reconciliation work?</span><span class="badge hard">Hard</span><span class="chevron">▼</span></div>
+  <div class="ans">The virtual DOM is a lightweight JS representation of the real DOM. When state changes, React creates a new virtual DOM tree, diffs it against the previous one (reconciliation), and calculates the minimal set of actual DOM operations needed. React's diffing algorithm runs in O(n) by assuming: elements of different types produce different trees, and <code>key</code> props identify stable children across renders. Only the changed DOM nodes are updated — this is much faster than rebuilding the full DOM.<button class="done-btn" onclick="markDone(event,this)">Mark done</button></div>
+</div>
+
+<div class="card" onclick="toggle(this)">
+  <div class="card-head"><span class="q">How would you handle a component that re-renders too often?</span><span class="badge hard">Hard</span><span class="chevron">▼</span></div>
+  <div class="ans">Step 1: Diagnose with React DevTools Profiler — find which component renders and why. Step 2: If caused by a parent re-render with stable props → wrap child in <code>React.memo</code>. Step 3: If a callback prop is recreated every render → <code>useCallback</code>. Step 4: If a computed value is expensive → <code>useMemo</code>. Step 5: If context causes it → split context into smaller pieces or use a selector pattern (Zustand supports this natively). Step 6: Move expensive state down to the component that needs it — don't lift unnecessarily.<button class="done-btn" onclick="markDone(event,this)">Mark done</button></div>
+</div>
+</div>
+
+<div id="ts" class="section">
+<div class="tip-box">They will test TypeScript basics since you used it in the project.</div>
+
+<div class="card" onclick="toggle(this)">
+  <div class="card-head"><span class="q">What is the difference between interface and type in TypeScript?</span><span class="badge med">Med</span><span class="chevron">▼</span></div>
+  <div class="ans">Both define shapes. Key differences: 1. <code>interface</code> supports declaration merging — two interfaces with the same name merge. <code>type</code> does not. 2. <code>type</code> can represent union types, intersection types, primitives, tuples — more powerful. 3. <code>interface</code> is better for defining object shapes (class contracts, API models) because it's extendable with <code>extends</code>. In this project: data models like <code>Course</code> use <code>interface</code>, utility types like form data use <code>type</code>.<button class="done-btn" onclick="markDone(event,this)">Mark done</button></div>
+</div>
+
+<div class="card" onclick="toggle(this)">
+  <div class="card-head"><span class="q">What is a generic in TypeScript and where did you use them?</span><span class="badge med">Med</span><span class="chevron">▼</span></div>
+  <div class="ans">Generics let you write reusable code that works with different types while preserving type safety. In the project: the <code>Table&lt;T&gt;</code> component accepts any data type — <code>columns</code> render functions get correctly typed row data. The <code>handleResponse&lt;T&gt;</code> helper returns typed data. React Query's <code>useQuery&lt;Course[]&gt;</code> makes <code>data</code> typed as <code>Course[] | undefined</code>. Without generics you'd need a separate component for each data type.<button class="done-btn" onclick="markDone(event,this)">Mark done</button></div>
+</div>
+
+<div class="card" onclick="toggle(this)">
+  <div class="card-head"><span class="q">What is the difference between any, unknown, and never?</span><span class="badge hard">Hard</span><span class="chevron">▼</span></div>
+  <div class="ans"><code>any</code>: opt out of type checking — you can do anything with it, TypeScript won't complain. Avoid it. <code>unknown</code>: you don't know the type yet, but TypeScript forces you to narrow it before using it — type-safe alternative to <code>any</code>. Used for API responses, <code>catch(error)</code> values. <code>never</code>: a value that can never exist — used in exhaustive checks, functions that always throw, and conditional types that resolve to an impossible case.<button class="done-btn" onclick="markDone(event,this)">Mark done</button></div>
+</div>
+
+<div class="card" onclick="toggle(this)">
+  <div class="card-head"><span class="q">How does Zod connect to TypeScript types?</span><span class="badge easy">Easy</span><span class="chevron">▼</span></div>
+  <div class="ans">Zod schemas are both runtime validators and TypeScript type sources. <code>z.infer&lt;typeof schema&gt;</code> extracts the TypeScript type from the schema automatically — so if the schema changes, the type updates too. This means the validation rules and the TypeScript type are always in sync — no separate interface to maintain. In the project, <code>type FormData = z.infer&lt;typeof schema&gt;</code> is used for every form.<button class="done-btn" onclick="markDone(event,this)">Mark done</button></div>
+</div>
+</div>
+
+<div id="design" class="section">
+<div class="tip-box">You said your role focuses on interactive design — expect UI/UX questions.</div>
+
+<div class="card" onclick="toggle(this)">
+  <div class="card-head"><span class="q">How did you approach UI/UX design decisions in this project?</span><span class="badge easy">Easy</span><span class="chevron">▼</span></div>
+  <div class="ans">Three principles: 1. Loading states everywhere — skeleton loaders instead of layout shifts, disabled buttons during mutations to prevent double-submission. 2. Empty states — every list has a meaningful empty state with a call-to-action, not a blank screen. 3. Feedback — every mutation (create/update/delete) shows a toast so the user knows what happened. The Tailwind utility-first approach kept CSS consistent — spacing, color, and radius all follow the design token system.<button class="done-btn" onclick="markDone(event,this)">Mark done</button></div>
+</div>
+
+<div class="card" onclick="toggle(this)">
+  <div class="card-head"><span class="q">What is Tailwind CSS and what are the tradeoffs vs traditional CSS?</span><span class="badge easy">Easy</span><span class="chevron">▼</span></div>
+  <div class="ans">Tailwind is a utility-first CSS framework — you style with small single-purpose classes directly in JSX. Pros: no naming CSS classes, no dead CSS, co-located styles, design token consistency, tiny production bundle (PurgeCSS removes unused utilities). Cons: HTML gets verbose, no semantic class names for readability, long class strings can be hard to scan. For component libraries and dashboards it's excellent — for document-heavy sites traditional CSS may be cleaner.<button class="done-btn" onclick="markDone(event,this)">Mark done</button></div>
+</div>
+
+<div class="card" onclick="toggle(this)">
+  <div class="card-head"><span class="q">How would you make this app fully accessible (a11y)?</span><span class="badge hard">Hard</span><span class="chevron">▼</span></div>
+  <div class="ans">Current gaps and fixes: 1. Modals need <code>role="dialog"</code>, <code>aria-modal="true"</code>, focus trap (focus stays inside modal), and restore focus on close. 2. Tables need <code>scope="col"</code> on headers. 3. Icon-only buttons need <code>aria-label</code>. 4. Form errors need <code>aria-describedby</code> pointing to the error message. 5. Color alone shouldn't convey meaning — badges use both color and text. 6. All interactive elements must be keyboard navigable with visible focus rings.<button class="done-btn" onclick="markDone(event,this)">Mark done</button></div>
+</div>
+
+<div class="card" onclick="toggle(this)">
+  <div class="card-head"><span class="q">How would you implement dark mode?</span><span class="badge med">Med</span><span class="chevron">▼</span></div>
+  <div class="ans">With Tailwind: enable <code>darkMode: 'class'</code> in config. Toggle a <code>dark</code> class on <code>&lt;html&gt;</code>. Use <code>dark:</code> variant on all color utilities. Store preference in <code>localStorage</code>, initialize from <code>prefers-color-scheme</code> media query on first load to respect system setting. For the component architecture: define CSS variables for all semantic colors in both <code>:root</code> and <code>.dark</code> — then components use variables, not hardcoded colors.<button class="done-btn" onclick="markDone(event,this)">Mark done</button></div>
+</div>
+</div>
+
+<div id="tips" class="section">
+<div class="tip-box">Mindset and delivery matter as much as technical knowledge.</div>
+
+<div class="card" onclick="toggle(this)">
+  <div class="card-head"><span class="q">How to answer "tell me about yourself"</span><span class="badge easy">Easy</span><span class="chevron">▼</span></div>
+  <div class="ans">Keep it under 90 seconds. Structure: Present → Past → Future. "I'm a frontend developer focused on React and TypeScript. I built [mention the CMS project] — a full CRUD management system with React Query, Zustand, and Tailwind. Before that I worked on [X]. I'm looking for a role where I can build interactive, performance-focused UIs at scale, which is why this position excited me." Then stop and let them ask follow-ups.<button class="done-btn" onclick="markDone(event,this)">Mark done</button></div>
+</div>
+
+<div class="card" onclick="toggle(this)">
+  <div class="card-head"><span class="q">What if you don't know the answer to a technical question?</span><span class="badge easy">Easy</span><span class="chevron">▼</span></div>
+  <div class="ans">Never bluff or go silent. Say: "I haven't used that specifically, but here's how I'd think through it..." and reason out loud. Or: "I know the concept but let me make sure I explain it accurately — [then try]." Interviewers hire people who think well under uncertainty, not just people who memorized answers. Admitting you don't know and showing curiosity is better than a confident wrong answer.<button class="done-btn" onclick="markDone(event,this)">Mark done</button></div>
+</div>
+
+<div class="card" onclick="toggle(this)">
+  <div class="card-head"><span class="q">Questions to ask them at the end</span><span class="badge easy">Easy</span><span class="chevron">▼</span></div>
+  <div class="ans">Ask at least 2: 1. "What does the frontend tech stack look like and are there plans to evolve it?" 2. "What does a typical sprint look like for the frontend team?" 3. "What's the biggest UI challenge the team is working through right now?" 4. "How do design and engineering collaborate — do you work with Figma designs or build from scratch?" Asking good questions signals genuine interest and seniority.<button class="done-btn" onclick="markDone(event,this)">Mark done</button></div>
+</div>
+
+<div class="card" onclick="toggle(this)">
+  <div class="card-head"><span class="q">How to handle a live coding challenge</span><span class="badge med">Med</span><span class="chevron">▼</span></div>
+  <div class="ans">1. Clarify before coding — "Can I use hooks? Should I handle loading?" 2. Think out loud — narrate your reasoning, don't go silent. 3. Start simple — get a working solution first, then optimize. 4. Name things clearly — interviewers read your variable names. 5. If stuck, say "I'd look this up in practice, but my approach would be..." 6. Test your logic verbally — "if input is empty, this returns undefined which means..." 7. Mention what you'd improve with more time.<button class="done-btn" onclick="markDone(event,this)">Mark done</button></div>
+</div>
+</div>
+</div>
+
+<script>
+const done = {};
+function switchTab(id) {
+  document.querySelectorAll('.section').forEach(s => s.classList.remove('active'));
+  document.querySelectorAll('.tab').forEach(t => t.classList.remove('active'));
+  document.getElementById(id).classList.add('active');
+  event.target.classList.add('active');
+}
+function toggle(card) {
+  const ans = card.querySelector('.ans');
+  const chev = card.querySelector('.chevron');
+  ans.classList.toggle('open');
+  chev.classList.toggle('open');
+}
+function markDone(e, btn) {
+  e.stopPropagation();
+  btn.classList.toggle('checked');
+  btn.textContent = btn.classList.contains('checked') ? 'Done ✓' : 'Mark done';
+  updateProgress();
+}
+function updateProgress() {
+  const total = document.querySelectorAll('.done-btn').length;
+  const checked = document.querySelectorAll('.done-btn.checked').length;
+  document.getElementById('prog').style.width = (checked / total * 100) + '%';
+}
+</script>
