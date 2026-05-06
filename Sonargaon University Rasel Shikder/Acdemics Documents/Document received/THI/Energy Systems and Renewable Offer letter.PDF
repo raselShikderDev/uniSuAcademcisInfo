@@ -1,0 +1,1387 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Anmeldung zur Bewerbung</title>
+
+<!-- Bootstrap -->
+
+<link href="/bootstrap-4.3.1-dist/css/bootstrap.min.css" rel="stylesheet">
+
+
+    <link href="/font-awesome/5.8.1/css/all.min.css" rel="stylesheet">
+
+<!--[if lt IE 9]>
+    <script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
+    <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+<![endif]-->
+<link href="/template/default_bew/grid_4_3_1_bew.css" rel="stylesheet">
+
+
+<script src="/popper_js/1.14.7/popper.min.js"></script>
+<script src="/jquery/3.2.1/jquery-3.2.1.min.js"></script>
+
+
+
+</head>
+ 
+<body>
+<div id='centerCont' class="container-fluid">
+
+<div id="header" class="row align-items-end">
+    
+    <div class="col-8 col-sm-8 col-md-8 col-lg-2"><a href="http://www.thi.de/" title="Zur&uuml;ck zur Technischen Hochschule Ingolstadt"><img class="img-fluid" src="/pics/Neue/fhin.gif" alt="Logo"></a></div>
+    
+    <div class="col-4 col-sm-4 col-md-4 d-block d-lg-none" style="text-align:right;"><span class="align-bottom" style="line-height:32px;float:right;">
+    <div style="float:left">
+            <form class="" style="margin:0px;" name="Form2" action="index.pl" method="post">
+            <input type="hidden" name="Language" value="de" /><input type="hidden" name="FH" value="fhin" /><input type="hidden" name="Session" value="efc34py01ax951eu8mc30437m37qyfe182gj632i" /><input type="hidden" name="Email" value="rasel.sikder777.rk@gmail.com" /><input type="hidden" name="Action" value="benutzer_anmelden" />
+            <button  type="submit" class="btn" style="" data-toggle="tooltip"   title="Umschaltung auf deutsche Sprache" data-html="true"><b>DE</b></button>
+            </form>
+            </div>
+    <div class="align-middle" style="float:left">/</div> 
+    <div style="float:left">
+            <form class="" style="margin:0px;" name="Form3" action="index.pl" method="post">
+            <input type="hidden" name="Language" value="en" /><input type="hidden" name="FH" value="fhin" /><input type="hidden" name="Session" value="efc34py01ax951eu8mc30437m37qyfe182gj632i" /><input type="hidden" name="Email" value="rasel.sikder777.rk@gmail.com" /><input type="hidden" name="Action" value="benutzer_anmelden" />
+            <button  type="submit" class="btn" style="" data-toggle="tooltip"   title="Switch to English language" data-html="true">EN</button>
+            </form>
+            </div></span></div>
+        
+    <div class="col-lg-6 d-none d-lg-block"><span class="align-bottom"><strong>Rasel Shikder</strong> (rasel.sikder777.rk@gmail.com)</span></div>
+    
+    <div class="col-lg-2 d-none d-lg-block" style="text-align:right;"><span class="align-bottom" style="line-height:32px;float:right;">
+    <div style="float:left">
+            <form class="" style="margin:0px;" name="Form2" action="index.pl" method="post">
+            <input type="hidden" name="Language" value="de" /><input type="hidden" name="FH" value="fhin" /><input type="hidden" name="Session" value="efc34py01ax951eu8mc30437m37qyfe182gj632i" /><input type="hidden" name="Email" value="rasel.sikder777.rk@gmail.com" /><input type="hidden" name="Action" value="benutzer_anmelden" />
+            <button  type="submit" class="btn" style="" data-toggle="tooltip"   title="Umschaltung auf deutsche Sprache" data-html="true"><b>DE</b></button>
+            </form>
+            </div>
+    <div class="align-middle" style="float:left">/</div> 
+    <div style="float:left">
+            <form class="" style="margin:0px;" name="Form3" action="index.pl" method="post">
+            <input type="hidden" name="Language" value="en" /><input type="hidden" name="FH" value="fhin" /><input type="hidden" name="Session" value="efc34py01ax951eu8mc30437m37qyfe182gj632i" /><input type="hidden" name="Email" value="rasel.sikder777.rk@gmail.com" /><input type="hidden" name="Action" value="benutzer_anmelden" />
+            <button  type="submit" class="btn" style="" data-toggle="tooltip"   title="Switch to English language" data-html="true">EN</button>
+            </form>
+            </div></span></div>         
+    
+    <div class="col-lg-2 d-none d-lg-block"><img class="img-fluid" src="/pics/logo/primuss.gif" title="Primuss Campus IT" alt="Primuss Campus IT"></div>
+    
+</div>
+<hr>
+
+<div id="main" class="row">
+
+    <div id="nav-container" class="col-12 col-lg-3 col-xl-2 sidebar-nav">
+    
+
+        <div class="navbar navbar-expand-lg navbar-light" role="navigation">
+            <span class="d-block d-lg-none"><span class="logged_in"><strong>Rasel Shikder</strong> (rasel.sikder777.rk@gmail.com)</span></span>
+            <button class="navbar-toggler" style="margin-bottom:5px;" type="button" data-toggle="collapse" data-target="#nav-prim">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+
+            <div id="nav-prim" class="navbar-collapse collapse sidebar-navbar-collapse">
+                <div class="container-fluid no-gutters">
+                
+                
+        <p id="navtitle">Anmeldung zur Bewerbung</p><ul id="nav-secondary">
+            <li >
+            <form class="" style="margin:0px;" name="Form5" action="index.pl" method="post">
+            <input type="hidden" name="Language" value="de" /><input type="hidden" name="FH" value="fhin" /><input type="hidden" name="Session" value="efc34py01ax951eu8mc30437m37qyfe182gj632i" /><input type="hidden" name="Email" value="rasel.sikder777.rk@gmail.com" /><input type="hidden" name="Action" value="overview" />
+            <button  type="submit" class="btn btn-light w-100 text-left" style=""    >Bewerbungsübersicht</button>
+            </form>
+            </li><li >
+            <form class="" style="margin:0px;" name="Form6" action="index.pl" method="post">
+            <input type="hidden" name="Language" value="de" /><input type="hidden" name="FH" value="fhin" /><input type="hidden" name="Session" value="efc34py01ax951eu8mc30437m37qyfe182gj632i" /><input type="hidden" name="Email" value="rasel.sikder777.rk@gmail.com" /><input type="hidden" name="Action" value="setup" />
+            <button  type="submit" class="btn btn-light w-100 text-left" style=""    >Einstellungen</button>
+            </form>
+            </li><li >
+            <form class="" style="margin:0px;" name="Form7" action="https://www3.primuss.de/cgi-bin/bew_anmeldung_v3/hilfe/index.pl" method="post">
+            <input type="hidden" name="Language" value="de" /><input type="hidden" name="FH" value="fhin" /><input type="hidden" name="Session" value="efc34py01ax951eu8mc30437m37qyfe182gj632i" /><input type="hidden" name="Email" value="rasel.sikder777.rk@gmail.com" /><input type="hidden" name="Action" value="help" />
+            <button  type="submit" class="btn btn-light w-100 text-left" style=""    >Kurzanleitung</button>
+            </form>
+            </li><li >
+            <form class="" style="margin:0px;" name="Form8" action="index.pl" method="post">
+            <input type="hidden" name="Language" value="de" /><input type="hidden" name="FH" value="fhin" /><input type="hidden" name="Session" value="efc34py01ax951eu8mc30437m37qyfe182gj632i" /><input type="hidden" name="Email" value="rasel.sikder777.rk@gmail.com" /><input type="hidden" name="Action" value="Logoff" />
+            <button  type="submit" class="btn btn-light w-100 text-left" style=""    >Abmelden</button>
+            </form>
+            </li>
+        </ul>
+    
+                
+                </div>
+            </div>
+
+        </div>
+            
+
+    
+    </div>
+    
+    
+     <div class="col-12 col-lg-9 col-xl-10 pl-5 pb-10">
+        
+        
+        
+        
+        <div>
+        <h5>Falls Sie bereits bei uns registriert sind:</h5>
+        <form action="index.pl" class="raiform" name="Form0" method="post">
+        
+    <div id="div-email_login" name="div-email_login">
+        <label for="email_login">E-Mail:</label>
+            <div>
+                <input id="email_login" name="email_login" value="" type="text" tabindex="2" title="E-Mail" />
+                
+            </div>
+                
+    </div>
+    
+        
+    <div id="div-passwort_login" name="div-passwort_login">
+        <label for="passwort_login">Passwort:</label>
+            <div>
+                <input id="passwort_login" name="passwort_login" value="" type="password" tabindex="2" title="Passwort" />
+                
+            </div>
+                
+    </div>
+    
+        <div>
+            <button type="submit" class="btn btn-outline-secondary" name="sign" title="Einloggen" />Einloggen</button>
+            <button type="submit" class="btn btn-outline-secondary" name="switch_action" value="resetPassword" title="Passwort zurücksetzen" />Passwort zurücksetzen</button>
+        </div>
+        <input type="hidden" name="Language" value="de" />
+        <input type="hidden" name="FH" value="fhin" />
+        <input type="hidden" name="Action" value="check_login" />
+        </form>
+        </div>
+    
+        
+        <div style="margin-top:50px;">
+        <h5>Falls Sie noch nicht bei uns registriert sind:</h5>
+        <p>Wenn Sie sich bei uns bewerben möchten, registrieren Sie sich bitte zunächst.</p>
+        
+            <form class="" style="margin:0px;" name="Form4" action="index.pl" method="post">
+            <input type="hidden" name="Language" value="de" /><input type="hidden" name="FH" value="fhin" /><input type="hidden" name="Session" value="efc34py01ax951eu8mc30437m37qyfe182gj632i" /><input type="hidden" name="Email" value="rasel.sikder777.rk@gmail.com" /><input type="hidden" name="Action" value="register" />
+            <button  type="submit" class="btn btn-outline-secondary" style=""    >Für die Online Bewerbung registrieren</button>
+            </form>
+            
+        </div>
+    
+        
+        <br><br><br><h5>Für diese Studiengänge ist eine Bewerbung möglich:</h5>
+        <div id="stg_list_accordion" class="card mb-4" style="width:75%">
+        
+                <div class="card border-0">
+                    <div class="card-header" id="stg-heading126">
+                        <button class="btn btn-link-secondary " data-toggle="collapse" data-target="#collapsestglist-126" aria-expanded="false" aria-controls="collapsestglist-126">
+                        <h5>Wintersemester 2026/2027 - (Semesterbeginn am 01.10.2026)</h5>
+                        </button>
+                    </div>
+                    <div id="collapsestglist-126" class="collapse  border-0" aria-labelledby="stg-heading126" data-parent="#stg_list_accordion">
+                        <div class="card-body">
+                            <table class="table">
+                                                            
+                    <tr><th></th>
+                    <th colspan="2" class="gross">erstes Semester</th>
+                    <th colspan="2" class="gross">höheres Semester</th>
+                    <th class="klein"></th></tr>
+                    
+                                                            <tr>
+                                                            <th>Bachelorstudiengänge</th>
+                                                            
+                    <th class="gross">von</th>
+                    <th class="gross">bis</th>
+                    <th class="gross">von</th>
+                    <th class="gross">bis</th>
+                
+                                                            </tr>
+                                                            <tr>
+                    <td>Architecture (Bachelor)</td>
+                    <td class=" bg-success">02.05.2026</td>
+                    <td class=" bg-success">31.08.2026</td>
+                    <td class=""></td>
+                    <td class=""></td>
+                    </tr>
+<tr>
+                    <td>Architektur (Bachelor)</td>
+                    <td class=" bg-success">02.05.2026</td>
+                    <td class=" bg-success">31.08.2026</td>
+                    <td class=""></td>
+                    <td class=""></td>
+                    </tr>
+<tr>
+                    <td>Autonomous Vehicle Engineering (Bachelor)</td>
+                    <td class=" bg-success">02.05.2026</td>
+                    <td class=" bg-success">15.07.2026</td>
+                    <td class=""></td>
+                    <td class=""></td>
+                    </tr>
+<tr>
+                    <td>Betriebswirtschaft (Bachelor)</td>
+                    <td class=" bg-success">02.05.2026</td>
+                    <td class=" bg-success">15.07.2026</td>
+                    <td class=" bg-success">02.05.2026</td>
+                    <td class=" bg-success">15.07.2026</td>
+                    </tr>
+<tr>
+                    <td>Bio- und Medizininformatik (Bachelor)</td>
+                    <td class=" bg-success">02.05.2026</td>
+                    <td class=" bg-success">31.08.2026</td>
+                    <td class=" bg-success">02.05.2026</td>
+                    <td class=" bg-success">15.07.2026</td>
+                    </tr>
+<tr>
+                    <td>Biomechanik (Bachelor)</td>
+                    <td class=" bg-success">02.05.2026</td>
+                    <td class=" bg-success">31.08.2026</td>
+                    <td class=" bg-success">02.05.2026</td>
+                    <td class=" bg-success">15.07.2026</td>
+                    </tr>
+<tr>
+                    <td>Biomedical Engineering (Bachelor)</td>
+                    <td class=" bg-success">02.05.2026</td>
+                    <td class=" bg-success">31.08.2026</td>
+                    <td class=" bg-success">02.05.2026</td>
+                    <td class=" bg-success">15.07.2026</td>
+                    </tr>
+<tr>
+                    <td>Computer Science and Artificial Intelligence (Bachelor)</td>
+                    <td class=" bg-success">02.05.2026</td>
+                    <td class=" bg-success">15.07.2026</td>
+                    <td class=""></td>
+                    <td class=""></td>
+                    </tr>
+<tr>
+                    <td>Cybersicherheit  (Bachelor)</td>
+                    <td class=" bg-success">02.05.2026</td>
+                    <td class=" bg-success">15.07.2026</td>
+                    <td class=" bg-success">02.05.2026</td>
+                    <td class=" bg-success">15.07.2026</td>
+                    </tr>
+<tr>
+                    <td>Data Science in Technik und Wirtschaft (Bachelor)</td>
+                    <td class=" bg-success">02.05.2026</td>
+                    <td class=" bg-success">15.07.2026</td>
+                    <td class=" bg-success">02.05.2026</td>
+                    <td class=" bg-success">15.07.2026</td>
+                    </tr>
+<tr>
+                    <td>Digital Business (Bachelor)</td>
+                    <td class=" bg-success">02.05.2026</td>
+                    <td class=" bg-success">15.07.2026</td>
+                    <td class=" bg-success">02.05.2026</td>
+                    <td class=" bg-success">15.07.2026</td>
+                    </tr>
+<tr>
+                    <td>Elektro- und Informationstechnik (Bachelor)</td>
+                    <td class=" bg-success">02.05.2026</td>
+                    <td class=" bg-success">31.08.2026</td>
+                    <td class=" bg-success">02.05.2026</td>
+                    <td class=" bg-success">15.07.2026</td>
+                    </tr>
+<tr>
+                    <td>Elektrotechnik und Elektromobilität (Bachelor)</td>
+                    <td class=" bg-success">02.05.2026</td>
+                    <td class=" bg-success">31.08.2026</td>
+                    <td class=""></td>
+                    <td class=""></td>
+                    </tr>
+<tr>
+                    <td>Energiesysteme und Erneuerbare Energien (Bachelor)</td>
+                    <td class=" bg-success">02.05.2026</td>
+                    <td class=" bg-success">31.08.2026</td>
+                    <td class=" bg-success">02.05.2026</td>
+                    <td class=" bg-success">15.07.2026</td>
+                    </tr>
+<tr>
+                    <td>Energy Systems and Renewable Energies (Bachelor)</td>
+                    <td class=" bg-success">02.05.2026</td>
+                    <td class=" bg-success">15.07.2026</td>
+                    <td class=" bg-success">02.05.2026</td>
+                    <td class=" bg-success">15.07.2026</td>
+                    </tr>
+<tr>
+                    <td>Engineering and Management (Bachelor)</td>
+                    <td class=" bg-success">02.05.2026</td>
+                    <td class=" bg-success">15.07.2026</td>
+                    <td class=" bg-success">02.05.2026</td>
+                    <td class=" bg-success">15.07.2026</td>
+                    </tr>
+<tr>
+                    <td>Fahrzeugtechnik (Bachelor)</td>
+                    <td class=" bg-success">02.05.2026</td>
+                    <td class=" bg-success">31.08.2026</td>
+                    <td class=" bg-success">02.05.2026</td>
+                    <td class=" bg-success">15.07.2026</td>
+                    </tr>
+<tr>
+                    <td>Flug- und Fahrzeuginformatik (Bachelor)</td>
+                    <td class=" bg-success">02.05.2026</td>
+                    <td class=" bg-success">31.08.2026</td>
+                    <td class=" bg-success">02.05.2026</td>
+                    <td class=" bg-success">15.07.2026</td>
+                    </tr>
+<tr>
+                    <td>Global Economics and Business Management (Bachelor)</td>
+                    <td class=" bg-success">02.05.2026</td>
+                    <td class=" bg-success">15.07.2026</td>
+                    <td class=" bg-success">02.05.2026</td>
+                    <td class=" bg-success">15.07.2026</td>
+                    </tr>
+<tr>
+                    <td>Informatik (Bachelor)</td>
+                    <td class=" bg-success">02.05.2026</td>
+                    <td class=" bg-success">15.07.2026</td>
+                    <td class=" bg-success">02.05.2026</td>
+                    <td class=" bg-success">15.07.2026</td>
+                    </tr>
+<tr>
+                    <td>Ingenieurwissenschaften (Bachelor)</td>
+                    <td class=" bg-success">02.05.2026</td>
+                    <td class=" bg-success">31.08.2026</td>
+                    <td class=" bg-success">02.05.2026</td>
+                    <td class=" bg-success">15.07.2026</td>
+                    </tr>
+<tr>
+                    <td>International Management (Bachelor)</td>
+                    <td class=" bg-success">02.05.2026</td>
+                    <td class=" bg-success">15.07.2026</td>
+                    <td class=" bg-success">02.05.2026</td>
+                    <td class=" bg-success">15.07.2026</td>
+                    </tr>
+<tr>
+                    <td>Künstliche Intelligenz (Bachelor)</td>
+                    <td class=" bg-success">02.05.2026</td>
+                    <td class=" bg-success">31.08.2026</td>
+                    <td class=" bg-success">02.05.2026</td>
+                    <td class=" bg-success">15.07.2026</td>
+                    </tr>
+<tr>
+                    <td>Luftfahrttechnik (Bachelor)</td>
+                    <td class=" bg-success">02.05.2026</td>
+                    <td class=" bg-success">31.08.2026</td>
+                    <td class=" bg-success">02.05.2026</td>
+                    <td class=" bg-success">15.07.2026</td>
+                    </tr>
+<tr>
+                    <td>Maschinenbau (Bachelor)</td>
+                    <td class=" bg-success">02.05.2026</td>
+                    <td class=" bg-success">31.08.2026</td>
+                    <td class=" bg-success">02.05.2026</td>
+                    <td class=" bg-success">15.07.2026</td>
+                    </tr>
+<tr>
+                    <td>Medienpsychologie und Digital Business (Bachelor)</td>
+                    <td class=" bg-success">02.05.2026</td>
+                    <td class=" bg-success">15.07.2026</td>
+                    <td class=" bg-success">02.05.2026</td>
+                    <td class=" bg-success">15.07.2026</td>
+                    </tr>
+<tr>
+                    <td>Nachhaltiges Bauingenieurwesen (Bachelor)</td>
+                    <td class=" bg-success">02.05.2026</td>
+                    <td class=" bg-success">31.08.2026</td>
+                    <td class=" bg-success">02.05.2026</td>
+                    <td class=" bg-success">15.07.2026</td>
+                    </tr>
+<tr>
+                    <td>Nachhaltigkeits- und Umweltmanagement (Bachelor)</td>
+                    <td class=" bg-success">02.05.2026</td>
+                    <td class=" bg-success">31.08.2026</td>
+                    <td class=" bg-success">02.05.2026</td>
+                    <td class=" bg-success">15.07.2026</td>
+                    </tr>
+<tr>
+                    <td>Psychologie und Soziologie nachhaltiger Transformation (Bachelor)</td>
+                    <td class=" bg-success">02.05.2026</td>
+                    <td class=" bg-success">31.08.2026</td>
+                    <td class=""></td>
+                    <td class=""></td>
+                    </tr>
+<tr>
+                    <td>Robotik und autonome Systeme (Bachelor)</td>
+                    <td class=" bg-success">02.05.2026</td>
+                    <td class=" bg-success">31.08.2026</td>
+                    <td class=""></td>
+                    <td class=""></td>
+                    </tr>
+<tr>
+                    <td>Sustainable Civil Engineering (Bachelor)</td>
+                    <td class=" bg-success">02.05.2026</td>
+                    <td class=" bg-success">31.08.2026</td>
+                    <td class=""></td>
+                    <td class=""></td>
+                    </tr>
+<tr>
+                    <td>Technisches Design (Bachelor)</td>
+                    <td class=" bg-success">02.05.2026</td>
+                    <td class=" bg-success">15.07.2026</td>
+                    <td class=" bg-success">02.05.2026</td>
+                    <td class=" bg-success">15.07.2026</td>
+                    </tr>
+<tr>
+                    <td>User Experience Design (Bachelor)</td>
+                    <td class=" bg-success">02.05.2026</td>
+                    <td class=" bg-success">31.08.2026</td>
+                    <td class=" bg-success">02.05.2026</td>
+                    <td class=" bg-success">15.07.2026</td>
+                    </tr>
+<tr>
+                    <td>Wirtschaftsinformatik (Bachelor)</td>
+                    <td class=" bg-success">02.05.2026</td>
+                    <td class=" bg-success">31.08.2026</td>
+                    <td class=" bg-success">02.05.2026</td>
+                    <td class=" bg-success">15.07.2026</td>
+                    </tr>
+<tr>
+                    <td>Wirtschaftsingenieurwesen (Bachelor)</td>
+                    <td class=" bg-success">02.05.2026</td>
+                    <td class=" bg-success">15.07.2026</td>
+                    <td class=" bg-success">02.05.2026</td>
+                    <td class=" bg-success">15.07.2026</td>
+                    </tr>
+<tr>
+                    <td>berufsbegleitender Bachelorstudiengang Angewandte Ingenieurwissenschaften (Bachelor)</td>
+                    <td class=" bg-success">02.05.2026</td>
+                    <td class=" bg-success">31.08.2026</td>
+                    <td class=""></td>
+                    <td class=""></td>
+                    </tr>
+<tr>
+                    <td>berufsbegleitender Bachelorstudiengang Betriebswirtschaft (Bachelor)</td>
+                    <td class=" bg-success">02.05.2026</td>
+                    <td class=" bg-success">31.08.2026</td>
+                    <td class=""></td>
+                    <td class=""></td>
+                    </tr>
+<tr>
+                    <td>berufsbegleitender Bachelorstudiengang Digital Business (Bachelor)</td>
+                    <td class=" bg-success">02.05.2026</td>
+                    <td class=" bg-success">31.08.2026</td>
+                    <td class=""></td>
+                    <td class=""></td>
+                    </tr>
+<tr>
+                    <td>berufsbegleitender Bachelorstudiengang Fahrzeugtechnik (Bachelor)</td>
+                    <td class=" bg-success">02.05.2026</td>
+                    <td class=" bg-success">31.08.2026</td>
+                    <td class=""></td>
+                    <td class=""></td>
+                    </tr>
+<tr>
+                    <td>berufsbegleitender Bachelorstudiengang Management in Gesundheitsberufen (Bachelor)</td>
+                    <td class=" bg-success">02.05.2026</td>
+                    <td class=" bg-success">31.08.2026</td>
+                    <td class=""></td>
+                    <td class=""></td>
+                    </tr>
+<tr>
+                    <td>berufsbegleitender Bachelorstudiengang Management in Sozialberufen (Bachelor)</td>
+                    <td class=" bg-success">02.05.2026</td>
+                    <td class=" bg-success">31.08.2026</td>
+                    <td class=""></td>
+                    <td class=""></td>
+                    </tr>
+<tr>
+                    <td>berufsbegleitender Bachelorstudiengang Wirtschaftsingenieurwesen-Management (Bachelor)</td>
+                    <td class=" bg-success">02.05.2026</td>
+                    <td class=" bg-success">31.08.2026</td>
+                    <td class=""></td>
+                    <td class=""></td>
+                    </tr>
+
+                                                            
+                                                            
+                    <tr><th></th>
+                    <th colspan="2" class="gross">erstes Semester</th>
+                    <th colspan="2" class="gross">höheres Semester</th>
+                    <th class="klein"></th></tr>
+                    
+                                                            <tr>
+                                                            <th>Masterstudiengänge</th>
+                                                            
+                    <th class="gross">von</th>
+                    <th class="gross">bis</th>
+                    <th class="gross">von</th>
+                    <th class="gross">bis</th>
+                
+                                                            </tr>
+                                                            <tr>
+                    <td>AI Engineering of Autonomous Systems (Master)</td>
+                    <td class=" bg-success">02.05.2026</td>
+                    <td class=" bg-success">15.07.2026</td>
+                    <td class=""></td>
+                    <td class=""></td>
+                    </tr>
+<tr>
+                    <td>Applied Research in Engineering Sciences (Master)</td>
+                    <td class=" bg-success">02.05.2026</td>
+                    <td class=" bg-success">31.08.2026</td>
+                    <td class=""></td>
+                    <td class=""></td>
+                    </tr>
+<tr>
+                    <td>Artificial Intelligence (Master)</td>
+                    <td class=" bg-success">02.05.2026</td>
+                    <td class=" bg-success">15.07.2026</td>
+                    <td class=""></td>
+                    <td class=""></td>
+                    </tr>
+<tr>
+                    <td>Automatisiertes Fahren und Fahrzeugsicherheit (Master)</td>
+                    <td class=" bg-success">02.05.2026</td>
+                    <td class=" bg-success">31.08.2026</td>
+                    <td class=""></td>
+                    <td class=""></td>
+                    </tr>
+<tr>
+                    <td>Biomedical Sciences & Management (Master)</td>
+                    <td class=" bg-success">02.05.2026</td>
+                    <td class=" bg-success">15.07.2026</td>
+                    <td class=""></td>
+                    <td class=""></td>
+                    </tr>
+<tr>
+                    <td>Business Information Systems Engineering (Master)</td>
+                    <td class=" bg-success">02.05.2026</td>
+                    <td class=" bg-success">15.07.2026</td>
+                    <td class=""></td>
+                    <td class=""></td>
+                    </tr>
+<tr>
+                    <td>Business Management (Master)</td>
+                    <td class=" bg-success">02.05.2026</td>
+                    <td class=" bg-success">15.07.2026</td>
+                    <td class=""></td>
+                    <td class=""></td>
+                    </tr>
+<tr>
+                    <td>Cloud Applications und Security Engineering (Master)</td>
+                    <td class=" bg-success">02.05.2026</td>
+                    <td class=" bg-success">15.07.2026</td>
+                    <td class=""></td>
+                    <td class=""></td>
+                    </tr>
+<tr>
+                    <td>Design Leadership (Master)</td>
+                    <td class=" bg-success">02.05.2026</td>
+                    <td class=" bg-success">15.07.2026</td>
+                    <td class=""></td>
+                    <td class=""></td>
+                    </tr>
+<tr>
+                    <td>Digitaler Einkauf & Nachhaltiges Supply Chain Management (Master)</td>
+                    <td class=" bg-success">02.05.2026</td>
+                    <td class=" bg-success">15.07.2026</td>
+                    <td class=""></td>
+                    <td class=""></td>
+                    </tr>
+<tr>
+                    <td>Elektrotechnik und Elektromobilität (Master)</td>
+                    <td class=" bg-success">02.05.2026</td>
+                    <td class=" bg-success">31.08.2026</td>
+                    <td class=""></td>
+                    <td class=""></td>
+                    </tr>
+<tr>
+                    <td>Engineering and Management (Master)</td>
+                    <td class=" bg-success">02.05.2026</td>
+                    <td class=" bg-success">15.07.2026</td>
+                    <td class=""></td>
+                    <td class=""></td>
+                    </tr>
+<tr>
+                    <td>Entrepreneurship and Corporate Venturing (Master)</td>
+                    <td class=" bg-success">02.05.2026</td>
+                    <td class=" bg-success">15.07.2026</td>
+                    <td class=""></td>
+                    <td class=""></td>
+                    </tr>
+<tr>
+                    <td>Fahrzeugtechnik (Master)</td>
+                    <td class=" bg-success">02.05.2026</td>
+                    <td class=" bg-success">31.08.2026</td>
+                    <td class=""></td>
+                    <td class=""></td>
+                    </tr>
+<tr>
+                    <td>Financial Management und Controlling (Master)</td>
+                    <td class=" bg-success">02.05.2026</td>
+                    <td class=" bg-success">15.07.2026</td>
+                    <td class=""></td>
+                    <td class=""></td>
+                    </tr>
+<tr>
+                    <td>Global Business (Master)</td>
+                    <td class=" bg-success">02.05.2026</td>
+                    <td class=" bg-success">15.07.2026</td>
+                    <td class=""></td>
+                    <td class=""></td>
+                    </tr>
+<tr>
+                    <td>Global Foresight and Technology Management (Master)</td>
+                    <td class=" bg-success">02.05.2026</td>
+                    <td class=" bg-success">15.07.2026</td>
+                    <td class=""></td>
+                    <td class=""></td>
+                    </tr>
+<tr>
+                    <td>Hydrogen Technologies & Applications (Master)</td>
+                    <td class=" bg-success">02.05.2026</td>
+                    <td class=" bg-success">15.07.2026</td>
+                    <td class=""></td>
+                    <td class=""></td>
+                    </tr>
+<tr>
+                    <td>Intelligent Aerial Systems (Master)</td>
+                    <td class=" bg-success">02.05.2026</td>
+                    <td class=" bg-success">31.08.2026</td>
+                    <td class=""></td>
+                    <td class=""></td>
+                    </tr>
+<tr>
+                    <td>International Automotive Engineering (Master)</td>
+                    <td class=" bg-success">02.05.2026</td>
+                    <td class=" bg-success">15.07.2026</td>
+                    <td class=""></td>
+                    <td class=""></td>
+                    </tr>
+<tr>
+                    <td>Luftfahrttechnik (Master)</td>
+                    <td class=" bg-success">02.05.2026</td>
+                    <td class=" bg-success">31.08.2026</td>
+                    <td class=""></td>
+                    <td class=""></td>
+                    </tr>
+<tr>
+                    <td>Marketing, Vertrieb und Medien (Master)</td>
+                    <td class=" bg-success">02.05.2026</td>
+                    <td class=" bg-success">15.07.2026</td>
+                    <td class=""></td>
+                    <td class=""></td>
+                    </tr>
+<tr>
+                    <td>Patentingenieurwesen (Master)</td>
+                    <td class=" bg-success">02.05.2026</td>
+                    <td class=" bg-success">15.07.2026</td>
+                    <td class=""></td>
+                    <td class=""></td>
+                    </tr>
+<tr>
+                    <td>Renewable Energy Systems (Master)</td>
+                    <td class=" bg-success">02.05.2026</td>
+                    <td class=" bg-success">15.07.2026</td>
+                    <td class=""></td>
+                    <td class=""></td>
+                    </tr>
+<tr>
+                    <td>Retail and Consumer Management (Master)</td>
+                    <td class=" bg-success">02.05.2026</td>
+                    <td class=" bg-success">15.07.2026</td>
+                    <td class=""></td>
+                    <td class=""></td>
+                    </tr>
+<tr>
+                    <td>Technische Entwicklung im Maschinenbau (Master)</td>
+                    <td class=" bg-success">02.05.2026</td>
+                    <td class=" bg-success">31.08.2026</td>
+                    <td class=""></td>
+                    <td class=""></td>
+                    </tr>
+<tr>
+                    <td>User Experience Design (Master)</td>
+                    <td class=" bg-success">02.05.2026</td>
+                    <td class=" bg-success">15.07.2026</td>
+                    <td class=""></td>
+                    <td class=""></td>
+                    </tr>
+<tr>
+                    <td>Weiterbildender Masterstudiengang Automotive Engineering and Technology (Master)</td>
+                    <td class=" bg-success">02.05.2026</td>
+                    <td class=" bg-success">31.08.2026</td>
+                    <td class=""></td>
+                    <td class=""></td>
+                    </tr>
+<tr>
+                    <td>Weiterbildender Masterstudiengang Automotive Production Engineering & Artificial Intelligence (Master)</td>
+                    <td class=" bg-success">02.05.2026</td>
+                    <td class=" bg-success">31.08.2026</td>
+                    <td class=""></td>
+                    <td class=""></td>
+                    </tr>
+<tr>
+                    <td>Werkstofftechnik und Ressourceneffizientes Engineering (Master)</td>
+                    <td class=" bg-success">02.05.2026</td>
+                    <td class=" bg-success">31.08.2026</td>
+                    <td class=""></td>
+                    <td class=""></td>
+                    </tr>
+<tr>
+                    <td>Wirtschaftsingenieurwesen (Master)</td>
+                    <td class=" bg-success">02.05.2026</td>
+                    <td class=" bg-success">15.07.2026</td>
+                    <td class=""></td>
+                    <td class=""></td>
+                    </tr>
+<tr>
+                    <td>weiterbildender Masterstudiengang Angewandte Künstliche Intelligenz (Master)</td>
+                    <td class=" bg-success">02.05.2026</td>
+                    <td class=" bg-success">31.08.2026</td>
+                    <td class=""></td>
+                    <td class=""></td>
+                    </tr>
+<tr>
+                    <td>weiterbildender Masterstudiengang Beschaffungsmanagement (Master)</td>
+                    <td class=" bg-success">02.05.2026</td>
+                    <td class=" bg-success">31.08.2026</td>
+                    <td class=" bg-danger"></td>
+                    <td class=" bg-danger"></td>
+                    </tr>
+<tr>
+                    <td>weiterbildender Masterstudiengang Digital Business Management (Master)</td>
+                    <td class=" bg-success">02.05.2026</td>
+                    <td class=" bg-success">31.08.2026</td>
+                    <td class=""></td>
+                    <td class=""></td>
+                    </tr>
+<tr>
+                    <td>weiterbildender Masterstudiengang Elektromobilität und Fahrzeugelektrifizierung (Master)</td>
+                    <td class=" bg-success">02.05.2026</td>
+                    <td class=" bg-success">31.08.2026</td>
+                    <td class=""></td>
+                    <td class=""></td>
+                    </tr>
+<tr>
+                    <td>weiterbildender Masterstudiengang Finance (Master)</td>
+                    <td class=" bg-success">02.05.2026</td>
+                    <td class=" bg-success">31.08.2026</td>
+                    <td class=""></td>
+                    <td class=""></td>
+                    </tr>
+<tr>
+                    <td>weiterbildender Masterstudiengang Global Engineering and Management (Master)</td>
+                    <td class=" bg-success">02.05.2026</td>
+                    <td class=" bg-success">31.08.2026</td>
+                    <td class=""></td>
+                    <td class=""></td>
+                    </tr>
+<tr>
+                    <td>weiterbildender Masterstudiengang Green Engineering (Master)</td>
+                    <td class=" bg-success">02.05.2026</td>
+                    <td class=" bg-success">31.08.2026</td>
+                    <td class=""></td>
+                    <td class=""></td>
+                    </tr>
+<tr>
+                    <td>weiterbildender Masterstudiengang IT-Management (Master)</td>
+                    <td class=" bg-success">02.05.2026</td>
+                    <td class=" bg-success">31.08.2026</td>
+                    <td class=""></td>
+                    <td class=""></td>
+                    </tr>
+<tr>
+                    <td>weiterbildender Masterstudiengang International Business (Master)</td>
+                    <td class=" bg-success">02.05.2026</td>
+                    <td class=" bg-success">31.08.2026</td>
+                    <td class=""></td>
+                    <td class=""></td>
+                    </tr>
+<tr>
+                    <td>weiterbildender Masterstudiengang Mobilitäts- und Innovationsmanagement (Master)</td>
+                    <td class=" bg-success">02.05.2026</td>
+                    <td class=" bg-success">31.08.2026</td>
+                    <td class=""></td>
+                    <td class=""></td>
+                    </tr>
+<tr>
+                    <td>weiterbildender Masterstudiengang Strategy, Global Risk & Security Management (Master)</td>
+                    <td class=" bg-success">02.05.2026</td>
+                    <td class=" bg-success">31.08.2026</td>
+                    <td class=""></td>
+                    <td class=""></td>
+                    </tr>
+<tr>
+                    <td>weiterbildender Masterstudiengang Unfallanalyse (Master)</td>
+                    <td class=" bg-success">02.05.2026</td>
+                    <td class=" bg-success">31.08.2026</td>
+                    <td class=""></td>
+                    <td class=""></td>
+                    </tr>
+<tr>
+                    <td>weiterbildender Masterstudiengang Wirtschaftsingenieurwesen Digitalisierung (Master)</td>
+                    <td class=" bg-success">02.05.2026</td>
+                    <td class=" bg-success">31.08.2026</td>
+                    <td class=""></td>
+                    <td class=""></td>
+                    </tr>
+
+                                                            
+                                                            
+                    <tr><th></th>
+                    <th colspan="2" class="gross">erstes Semester</th>
+                    <th colspan="2" class="gross">höheres Semester</th>
+                    <th class="klein"></th></tr>
+                    
+                                                            <tr>
+                                                            <th>Promotionen</th>
+                                                            
+                    <th class="gross">von</th>
+                    <th class="gross">bis</th>
+                    <th class="gross">von</th>
+                    <th class="gross">bis</th>
+                
+                                                            </tr>
+                                                            <tr>
+                    <td>Elektromobilität (Promotionszentrum Ingenieurwissenschaften) (Promotion)</td>
+                    <td class=" bg-success">02.05.2026</td>
+                    <td class=" bg-success">31.05.2026</td>
+                    <td class=""></td>
+                    <td class=""></td>
+                    </tr>
+<tr>
+                    <td>Energiesysteme (Promotionszentrum Ingenieurwissenschaften) (Promotion)</td>
+                    <td class=" bg-success">02.05.2026</td>
+                    <td class=" bg-success">31.05.2026</td>
+                    <td class=""></td>
+                    <td class=""></td>
+                    </tr>
+<tr>
+                    <td>Fahrzeugsicherheit (Promotionszentrum Ingenieurwissenschaften) (Promotion)</td>
+                    <td class=" bg-success">02.05.2026</td>
+                    <td class=" bg-success">31.05.2026</td>
+                    <td class=""></td>
+                    <td class=""></td>
+                    </tr>
+<tr>
+                    <td>Gesellschaftliche Implikationen (Promotionszentrum Künstliche Intelligenz / Informatik) (Promotion)</td>
+                    <td class=" bg-success">02.05.2026</td>
+                    <td class=" bg-success">31.05.2026</td>
+                    <td class=""></td>
+                    <td class=""></td>
+                    </tr>
+<tr>
+                    <td>Human-Machine Interaction (Promotionszentrum Künstliche Intelligenz / Informatik) (Promotion)</td>
+                    <td class=" bg-success">02.05.2026</td>
+                    <td class=" bg-success">31.05.2026</td>
+                    <td class=""></td>
+                    <td class=""></td>
+                    </tr>
+<tr>
+                    <td>Künstliche Intelligenz (Promotionszentrum Künstliche Intelligenz / Informatik) (Promotion)</td>
+                    <td class=" bg-success">02.05.2026</td>
+                    <td class=" bg-success">31.05.2026</td>
+                    <td class=""></td>
+                    <td class=""></td>
+                    </tr>
+<tr>
+                    <td>Neue Werkstoffe (Promotionszentrum Ingenieurwissenschaften) (Promotion)</td>
+                    <td class=" bg-success">02.05.2026</td>
+                    <td class=" bg-success">31.05.2026</td>
+                    <td class=""></td>
+                    <td class=""></td>
+                    </tr>
+<tr>
+                    <td>Technische Informatik (Promotionszentrum Künstliche Intelligenz / Informatik) (Promotion)</td>
+                    <td class=" bg-success">02.05.2026</td>
+                    <td class=" bg-success">31.05.2026</td>
+                    <td class=""></td>
+                    <td class=""></td>
+                    </tr>
+
+                                                            
+                                                            
+                    <tr><th></th>
+                    <th colspan="2" class="gross">erstes Semester</th>
+                    <th colspan="2" class="gross">höheres Semester</th>
+                    <th class="klein"></th></tr>
+                    
+                                                            <tr>
+                                                            <th>Berufbegleitende/weiterbildende Angebote</th>
+                                                            
+                    <th class="gross">von</th>
+                    <th class="gross">bis</th>
+                    <th class="gross">von</th>
+                    <th class="gross">bis</th>
+                
+                                                            </tr>
+                                                            <tr>
+                    <td>Vertiefung Ingenieurwissenschaften (Zertifikat)</td>
+                    <td class=" bg-danger">15.07.2026</td>
+                    <td class=" bg-danger">31.08.2026</td>
+                    <td class=""></td>
+                    <td class=""></td>
+                    </tr>
+<tr>
+                    <td>Weiterbildender Masterstudiengang Automotive Engineering and Technology (Master)</td>
+                    <td class=" bg-success">02.05.2026</td>
+                    <td class=" bg-success">31.08.2026</td>
+                    <td class=""></td>
+                    <td class=""></td>
+                    </tr>
+<tr>
+                    <td>Weiterbildender Masterstudiengang Automotive Production Engineering & Artificial Intelligence (Master)</td>
+                    <td class=" bg-success">02.05.2026</td>
+                    <td class=" bg-success">31.08.2026</td>
+                    <td class=""></td>
+                    <td class=""></td>
+                    </tr>
+<tr>
+                    <td>Weiterbildungszertifikat Automotive Systems Engineering (Zertifikat)</td>
+                    <td class=" bg-success">02.05.2026</td>
+                    <td class=" bg-success">31.08.2026</td>
+                    <td class=""></td>
+                    <td class=""></td>
+                    </tr>
+<tr>
+                    <td>Weiterbildungszertifikat Change- und Innovationsmanagement (Zertifikat)</td>
+                    <td class=" bg-success">02.05.2026</td>
+                    <td class=" bg-success">31.08.2026</td>
+                    <td class=""></td>
+                    <td class=""></td>
+                    </tr>
+<tr>
+                    <td>Weiterbildungszertifikat Cyber Security Engineer (Zertifikat)</td>
+                    <td class=" bg-success">02.05.2026</td>
+                    <td class=" bg-success">31.08.2026</td>
+                    <td class=""></td>
+                    <td class=""></td>
+                    </tr>
+<tr>
+                    <td>Weiterbildungszertifikat Digital Business Management (Zertifikat)</td>
+                    <td class=" bg-success">02.05.2026</td>
+                    <td class=" bg-success">31.08.2026</td>
+                    <td class=""></td>
+                    <td class=""></td>
+                    </tr>
+<tr>
+                    <td>Weiterbildungszertifikat Energiegewinnung (Zertifikat)</td>
+                    <td class=" bg-success">02.05.2026</td>
+                    <td class=" bg-success">31.08.2026</td>
+                    <td class=""></td>
+                    <td class=""></td>
+                    </tr>
+<tr>
+                    <td>Weiterbildungszertifikat Fahrzeugtechnologie (Zertifikat)</td>
+                    <td class=" bg-success">02.05.2026</td>
+                    <td class=" bg-success">31.08.2026</td>
+                    <td class=""></td>
+                    <td class=""></td>
+                    </tr>
+<tr>
+                    <td>Weiterbildungszertifikat Grundlagen der Künstlichen Intelligenz (Zertifikat)</td>
+                    <td class=" bg-success">02.05.2026</td>
+                    <td class=" bg-success">31.08.2026</td>
+                    <td class=""></td>
+                    <td class=""></td>
+                    </tr>
+<tr>
+                    <td>Weiterbildungszertifikat IT-Management (Zertifikat)</td>
+                    <td class=" bg-success">02.05.2026</td>
+                    <td class=" bg-success">31.08.2026</td>
+                    <td class=""></td>
+                    <td class=""></td>
+                    </tr>
+<tr>
+                    <td>Weiterbildungszertifikat International Business (Zertifikat)</td>
+                    <td class=" bg-success">02.05.2026</td>
+                    <td class=" bg-success">31.08.2026</td>
+                    <td class=""></td>
+                    <td class=""></td>
+                    </tr>
+<tr>
+                    <td>Weiterbildungszertifikat Management in der Digitalisierung (Zertifikat)</td>
+                    <td class=" bg-success">02.05.2026</td>
+                    <td class=" bg-success">31.08.2026</td>
+                    <td class=""></td>
+                    <td class=""></td>
+                    </tr>
+<tr>
+                    <td>Weiterqualifizierungszertifikat Basis Computer Science (Zertifikat)</td>
+                    <td class=" bg-success">02.05.2026</td>
+                    <td class=" bg-success">31.08.2026</td>
+                    <td class=""></td>
+                    <td class=""></td>
+                    </tr>
+<tr>
+                    <td>Weiterqualifizierungszertifikat Ingenieurwissenschaftliche Grundlagen (Zertifikat)</td>
+                    <td class=" bg-success">02.05.2026</td>
+                    <td class=" bg-success">31.08.2026</td>
+                    <td class=""></td>
+                    <td class=""></td>
+                    </tr>
+<tr>
+                    <td>Weiterqualifizierungszertifikat Produktion (Zertifikat)</td>
+                    <td class=" bg-success">02.05.2026</td>
+                    <td class=" bg-success">31.08.2026</td>
+                    <td class=""></td>
+                    <td class=""></td>
+                    </tr>
+<tr>
+                    <td>Weiterqualifizierungszertifikat Technisches Projektmanagement (Zertifikat)</td>
+                    <td class=" bg-success">02.05.2026</td>
+                    <td class=" bg-success">31.08.2026</td>
+                    <td class=""></td>
+                    <td class=""></td>
+                    </tr>
+<tr>
+                    <td>berufsbegleitender Bachelorstudiengang Angewandte Ingenieurwissenschaften (Bachelor)</td>
+                    <td class=" bg-success">02.05.2026</td>
+                    <td class=" bg-success">31.08.2026</td>
+                    <td class=""></td>
+                    <td class=""></td>
+                    </tr>
+<tr>
+                    <td>berufsbegleitender Bachelorstudiengang Betriebswirtschaft (Bachelor)</td>
+                    <td class=" bg-success">02.05.2026</td>
+                    <td class=" bg-success">31.08.2026</td>
+                    <td class=""></td>
+                    <td class=""></td>
+                    </tr>
+<tr>
+                    <td>berufsbegleitender Bachelorstudiengang Digital Business (Bachelor)</td>
+                    <td class=" bg-success">02.05.2026</td>
+                    <td class=" bg-success">31.08.2026</td>
+                    <td class=""></td>
+                    <td class=""></td>
+                    </tr>
+<tr>
+                    <td>berufsbegleitender Bachelorstudiengang Fahrzeugtechnik (Bachelor)</td>
+                    <td class=" bg-success">02.05.2026</td>
+                    <td class=" bg-success">31.08.2026</td>
+                    <td class=""></td>
+                    <td class=""></td>
+                    </tr>
+<tr>
+                    <td>berufsbegleitender Bachelorstudiengang Management in Gesundheitsberufen (Bachelor)</td>
+                    <td class=" bg-success">02.05.2026</td>
+                    <td class=" bg-success">31.08.2026</td>
+                    <td class=""></td>
+                    <td class=""></td>
+                    </tr>
+<tr>
+                    <td>berufsbegleitender Bachelorstudiengang Management in Sozialberufen (Bachelor)</td>
+                    <td class=" bg-success">02.05.2026</td>
+                    <td class=" bg-success">31.08.2026</td>
+                    <td class=""></td>
+                    <td class=""></td>
+                    </tr>
+<tr>
+                    <td>berufsbegleitender Bachelorstudiengang Wirtschaftsingenieurwesen-Management (Bachelor)</td>
+                    <td class=" bg-success">02.05.2026</td>
+                    <td class=" bg-success">31.08.2026</td>
+                    <td class=""></td>
+                    <td class=""></td>
+                    </tr>
+<tr>
+                    <td>weiterbildender Masterstudiengang Angewandte Künstliche Intelligenz (Master)</td>
+                    <td class=" bg-success">02.05.2026</td>
+                    <td class=" bg-success">31.08.2026</td>
+                    <td class=""></td>
+                    <td class=""></td>
+                    </tr>
+<tr>
+                    <td>weiterbildender Masterstudiengang Beschaffungsmanagement (Master)</td>
+                    <td class=" bg-success">02.05.2026</td>
+                    <td class=" bg-success">31.08.2026</td>
+                    <td class=" bg-danger"></td>
+                    <td class=" bg-danger"></td>
+                    </tr>
+<tr>
+                    <td>weiterbildender Masterstudiengang Digital Business Management (Master)</td>
+                    <td class=" bg-success">02.05.2026</td>
+                    <td class=" bg-success">31.08.2026</td>
+                    <td class=""></td>
+                    <td class=""></td>
+                    </tr>
+<tr>
+                    <td>weiterbildender Masterstudiengang Elektromobilität und Fahrzeugelektrifizierung (Master)</td>
+                    <td class=" bg-success">02.05.2026</td>
+                    <td class=" bg-success">31.08.2026</td>
+                    <td class=""></td>
+                    <td class=""></td>
+                    </tr>
+<tr>
+                    <td>weiterbildender Masterstudiengang Finance (Master)</td>
+                    <td class=" bg-success">02.05.2026</td>
+                    <td class=" bg-success">31.08.2026</td>
+                    <td class=""></td>
+                    <td class=""></td>
+                    </tr>
+<tr>
+                    <td>weiterbildender Masterstudiengang Global Engineering and Management (Master)</td>
+                    <td class=" bg-success">02.05.2026</td>
+                    <td class=" bg-success">31.08.2026</td>
+                    <td class=""></td>
+                    <td class=""></td>
+                    </tr>
+<tr>
+                    <td>weiterbildender Masterstudiengang Green Engineering (Master)</td>
+                    <td class=" bg-success">02.05.2026</td>
+                    <td class=" bg-success">31.08.2026</td>
+                    <td class=""></td>
+                    <td class=""></td>
+                    </tr>
+<tr>
+                    <td>weiterbildender Masterstudiengang IT-Management (Master)</td>
+                    <td class=" bg-success">02.05.2026</td>
+                    <td class=" bg-success">31.08.2026</td>
+                    <td class=""></td>
+                    <td class=""></td>
+                    </tr>
+<tr>
+                    <td>weiterbildender Masterstudiengang International Business (Master)</td>
+                    <td class=" bg-success">02.05.2026</td>
+                    <td class=" bg-success">31.08.2026</td>
+                    <td class=""></td>
+                    <td class=""></td>
+                    </tr>
+<tr>
+                    <td>weiterbildender Masterstudiengang Mobilitäts- und Innovationsmanagement (Master)</td>
+                    <td class=" bg-success">02.05.2026</td>
+                    <td class=" bg-success">31.08.2026</td>
+                    <td class=""></td>
+                    <td class=""></td>
+                    </tr>
+<tr>
+                    <td>weiterbildender Masterstudiengang Strategy, Global Risk & Security Management (Master)</td>
+                    <td class=" bg-success">02.05.2026</td>
+                    <td class=" bg-success">31.08.2026</td>
+                    <td class=""></td>
+                    <td class=""></td>
+                    </tr>
+<tr>
+                    <td>weiterbildender Masterstudiengang Unfallanalyse (Master)</td>
+                    <td class=" bg-success">02.05.2026</td>
+                    <td class=" bg-success">31.08.2026</td>
+                    <td class=""></td>
+                    <td class=""></td>
+                    </tr>
+<tr>
+                    <td>weiterbildender Masterstudiengang Wirtschaftsingenieurwesen Digitalisierung (Master)</td>
+                    <td class=" bg-success">02.05.2026</td>
+                    <td class=" bg-success">31.08.2026</td>
+                    <td class=""></td>
+                    <td class=""></td>
+                    </tr>
+
+                                                            
+                                                            
+                    <tr><th></th>
+                    <th colspan="2" class="gross">erstes Semester</th>
+                    <th colspan="2" class="gross">höheres Semester</th>
+                    <th class="klein"></th></tr>
+                    
+                                                            <tr>
+                                                            <th>Sonstige Studiengänge</th>
+                                                            
+                    <th class="gross">von</th>
+                    <th class="gross">bis</th>
+                    <th class="gross">von</th>
+                    <th class="gross">bis</th>
+                
+                                                            </tr>
+                                                            <tr>
+                    <td>Promotionsbegleitstudium (Zertifikat)</td>
+                    <td class=" bg-success">02.05.2026</td>
+                    <td class=" bg-success">15.07.2026</td>
+                    <td class=""></td>
+                    <td class=""></td>
+                    </tr>
+<tr>
+                    <td>SHIFT Study Sprint Sustainable Civil Engineering (Zertifikat)</td>
+                    <td class=" bg-danger">15.03.2026</td>
+                    <td class=" bg-danger">30.04.2026</td>
+                    <td class=""></td>
+                    <td class=""></td>
+                    </tr>
+<tr>
+                    <td>Vertiefung Ingenieurwissenschaften (Zertifikat)</td>
+                    <td class=" bg-danger">15.07.2026</td>
+                    <td class=" bg-danger">31.08.2026</td>
+                    <td class=""></td>
+                    <td class=""></td>
+                    </tr>
+<tr>
+                    <td>Weiterbildungszertifikat Automotive Systems Engineering (Zertifikat)</td>
+                    <td class=" bg-success">02.05.2026</td>
+                    <td class=" bg-success">31.08.2026</td>
+                    <td class=""></td>
+                    <td class=""></td>
+                    </tr>
+<tr>
+                    <td>Weiterbildungszertifikat Change- und Innovationsmanagement (Zertifikat)</td>
+                    <td class=" bg-success">02.05.2026</td>
+                    <td class=" bg-success">31.08.2026</td>
+                    <td class=""></td>
+                    <td class=""></td>
+                    </tr>
+<tr>
+                    <td>Weiterbildungszertifikat Cyber Security Engineer (Zertifikat)</td>
+                    <td class=" bg-success">02.05.2026</td>
+                    <td class=" bg-success">31.08.2026</td>
+                    <td class=""></td>
+                    <td class=""></td>
+                    </tr>
+<tr>
+                    <td>Weiterbildungszertifikat Digital Business Management (Zertifikat)</td>
+                    <td class=" bg-success">02.05.2026</td>
+                    <td class=" bg-success">31.08.2026</td>
+                    <td class=""></td>
+                    <td class=""></td>
+                    </tr>
+<tr>
+                    <td>Weiterbildungszertifikat Energiegewinnung (Zertifikat)</td>
+                    <td class=" bg-success">02.05.2026</td>
+                    <td class=" bg-success">31.08.2026</td>
+                    <td class=""></td>
+                    <td class=""></td>
+                    </tr>
+<tr>
+                    <td>Weiterbildungszertifikat Fahrzeugtechnologie (Zertifikat)</td>
+                    <td class=" bg-success">02.05.2026</td>
+                    <td class=" bg-success">31.08.2026</td>
+                    <td class=""></td>
+                    <td class=""></td>
+                    </tr>
+<tr>
+                    <td>Weiterbildungszertifikat Grundlagen der Künstlichen Intelligenz (Zertifikat)</td>
+                    <td class=" bg-success">02.05.2026</td>
+                    <td class=" bg-success">31.08.2026</td>
+                    <td class=""></td>
+                    <td class=""></td>
+                    </tr>
+<tr>
+                    <td>Weiterbildungszertifikat IT-Management (Zertifikat)</td>
+                    <td class=" bg-success">02.05.2026</td>
+                    <td class=" bg-success">31.08.2026</td>
+                    <td class=""></td>
+                    <td class=""></td>
+                    </tr>
+<tr>
+                    <td>Weiterbildungszertifikat International Business (Zertifikat)</td>
+                    <td class=" bg-success">02.05.2026</td>
+                    <td class=" bg-success">31.08.2026</td>
+                    <td class=""></td>
+                    <td class=""></td>
+                    </tr>
+<tr>
+                    <td>Weiterbildungszertifikat Management in der Digitalisierung (Zertifikat)</td>
+                    <td class=" bg-success">02.05.2026</td>
+                    <td class=" bg-success">31.08.2026</td>
+                    <td class=""></td>
+                    <td class=""></td>
+                    </tr>
+<tr>
+                    <td>Weiterqualifizierungszertifikat Basis Computer Science (Zertifikat)</td>
+                    <td class=" bg-success">02.05.2026</td>
+                    <td class=" bg-success">31.08.2026</td>
+                    <td class=""></td>
+                    <td class=""></td>
+                    </tr>
+<tr>
+                    <td>Weiterqualifizierungszertifikat Ingenieurwissenschaftliche Grundlagen (Zertifikat)</td>
+                    <td class=" bg-success">02.05.2026</td>
+                    <td class=" bg-success">31.08.2026</td>
+                    <td class=""></td>
+                    <td class=""></td>
+                    </tr>
+<tr>
+                    <td>Weiterqualifizierungszertifikat Produktion (Zertifikat)</td>
+                    <td class=" bg-success">02.05.2026</td>
+                    <td class=" bg-success">31.08.2026</td>
+                    <td class=""></td>
+                    <td class=""></td>
+                    </tr>
+<tr>
+                    <td>Weiterqualifizierungszertifikat Technisches Projektmanagement (Zertifikat)</td>
+                    <td class=" bg-success">02.05.2026</td>
+                    <td class=" bg-success">31.08.2026</td>
+                    <td class=""></td>
+                    <td class=""></td>
+                    </tr>
+
+                                                            </table>
+                        </div>
+                    </div>
+                </div>
+                
+        </div>
+    
+        
+    </div>
+
+
+</div>
+
+</div>
+<div id="spacer_to_footer" class="col-12"><div style="height:120px;"></div></div>
+<div id="spacer_to_footer2" class="col-12 d-xl-none"><div style="height:30px;"></div></div>
+<div id="spacer_to_footer2" class="col-12 d-lg-none"><div style="height:30px;"></div></div>
+<div id="spacer_to_footer3" class="col-12 d-md-none"><div style="height:30px;"></div></div>
+<div id="spacer_to_footer4" class="col-12 d-sm-none"><div style="height:30px;"></div></div>
+
+<div id="stickyfooter">
+<div id="footer" class="container-fluid row no-gutters">
+        <div class="col-lg-2 d-none d-lg-block"></div>
+        <div id="footercontainer" class="col-12 col-lg-10 container-fluid row">
+            
+             
+                <div class="col-12 col-md-4 col-lg-2">
+                    <a href="mailto:bewerbung@thi.de" title="Email senden">Kontakt</a>
+                </div>
+                
+                <div class="col-12 col-md-4 col-lg-2">
+                     <a class="links" target="_blank" href="https://www.thi.de/sonstiges/impressum">Impressum</a>
+                </div>
+                
+                <div class="col-12 col-md-4 col-lg-2">
+                     <a class="links" target="_blank" href="https://www.thi.de/datenschutzinformation-primuss">Datenschutzerklärung</a>
+                </div>	          
+                <div class="col-12 col-md-4 col-lg-2">	     
+                    <span class="f3">
+            <form class="d-inline-block" style="margin:0px;" name="Form1" action="index.pl" method="post">
+            <input type="hidden" name="Language" value="en" /><input type="hidden" name="FH" value="fhin" /><input type="hidden" name="Session" value="efc34py01ax951eu8mc30437m37qyfe182gj632i" /><input type="hidden" name="Email" value="rasel.sikder777.rk@gmail.com" /><input type="hidden" name="Action" value="benutzer_anmelden" />
+            <button  type="submit" class="btn btn-link footerbutton" style="" data-toggle="tooltip"   title="Switch to English language" data-html="true">Englische Version (English)</button>
+            </form>
+            </span>
+                </div>
+                
+                <div class="col-12 col-md-4 col-lg-2">	     
+                    <span class="f3">Version: 0.068</span>
+                </div>
+                
+            
+
+	</div>
+</div>
+</div>
+
+
+
+    <!-- jQuery und popper (wird für Bootstrap JavaScript-Plugins benötigt) -->
+    
+    <script src="/jquery/3.2.1/jquery-3.2.1.min.js"></script>
+    
+    
+    <script src="/bootstrap-4.3.1-dist/js/bootstrap.min.js"></script>
+    
+    
+<script type="text/javascript">
+$(function () {
+$('[data-toggle="tooltip"]').tooltip()
+})
+</script>
+
+    
+
+</body>
+ 
+  
+
+  
+</html>
+
